@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maestro José Antonio Molina - Página Principal</title>
+    <link href="./output.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&family=Cormorant+Garamond:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+<body class="bg-black text-white font-montserrat selection:bg-white selection:text-black">
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 nav-blur border-b border-white/10">
+        <div class="max-w-[2000px] mx-auto px-4 sm:px-8">
+            <div class="flex justify-between h-24 items-center">
+                <div class="text-2xl sm:text-3xl font-light tracking-[0.3em] font-cormorant">MOLINA</div>
+                <div class="hidden md:flex space-x-16 text-xs tracking-[0.2em]">
+                    <a href="#actuaciones" class="hover:underline">ACTUACIONES</a>
+                    <a href="#sobre-mi" class="hover:underline">SOBRE MÍ</a>
+                    <a href="#" class="hover:underline">CONTACTO</a>
+                </div>
+                <button class="md:hidden w-8 h-8 flex flex-col justify-center space-y-2" onclick="toggleMenu()" aria-label="Alternar menú">
+                    <span class="w-full h-[1px] bg-white transform transition-transform origin-right"></span>
+                    <span class="w-full h-[1px] bg-white transform transition-transform origin-right"></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu fixed inset-0 bg-black z-40 flex flex-col justify-center items-center space-y-12 nav-blur md:hidden pt-24 transition-transform duration-500">
+        <a href="#actuaciones" class="text-2xl tracking-[0.2em] hover:text-white/50 transition-colors">ACTUACIONES</a>
+        <a href="#sobre-mi" class="text-2xl tracking-[0.2em] hover:text-white/50 transition-colors">SOBRE MÍ</a>
+        <a href="#" class="text-2xl tracking-[0.2em] hover:text-white/50 transition-colors">CONTACTO</a>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="min-h-screen relative flex items-center">
+        <div class="absolute inset-0">
+            <img src="https://jaocruz.nyc3.cdn.digitaloceanspaces.com/Molina/5.png" 
+                 alt="Director de orquesta dirigiendo una sinfonía" 
+                 class="w-full h-full object-cover">
+            <div class="absolute inset-0 bg-gradient-to-r from-black/95 to-black/30 md:bg-gradient-to-b md:from-black/30 md:to-black/95"></div>
+        </div>
+        <div class="relative z-10 max-w-[2000px] mx-auto px-4 sm:px-8 pt-32">
+            <div class="max-w-4xl">
+                <p class="text-sm tracking-[0.3em] mb-8 animate-fade-in" style="animation-delay: 0.5s">JOSÉ ANTONIO MOLINA</p>
+                <h1 class="text-[12vw] md:text-[7vw] font-light leading-[0.9] mb-8 font-cormorant animate-fade-in" style="animation-delay: 0.8s">
+                    DIRIGIENDO<br/>BRILLANTEZ
+                </h1>
+                <div class="h-[1px] w-32 bg-white reveal-line mb-12" style="animation-delay: 1.2s"></div>
+                <p class="text-lg sm:text-xl font-light tracking-wide text-white/80 max-w-xl mb-16 animate-fade-in leading-relaxed" style="animation-delay: 1.5s">
+                    Disfruta del legado de un maestro dominicano que ha elevado la música sinfónica a escenarios internacionales, llevando la pasión y la excelencia a cada actuación.
+                </p>
+                <a href="#actuaciones" class="group w-full sm:w-auto px-8 sm:px-12 py-4 border border-white hover:bg-white hover:text-black transition-all duration-500 text-xs tracking-[0.2em] animate-fade-in flex items-center justify-center sm:justify-start gap-4" style="animation-delay: 1.8s">
+                    DESCUBRE LAS ACTUACIONES
+                    <span class="h-[1px] w-8 bg-current transform transition-transform group-hover:translate-x-2"></span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sobre Mí Section -->
+    <section id="sobre-mi" class="py-20 sm:py-40 px-4 sm:px-8 bg-black">
+        <div class="max-w-[2000px] mx-auto text-center">
+            <div class="space-y-8 sm:space-y-12">
+                <div class="space-y-4">
+                    <p class="text-sm tracking-[0.3em] text-white/60">SOBRE MÍ</p>
+                    <h2 class="text-4xl sm:text-5xl font-light tracking-wide font-cormorant">UN LEGADO MUSICAL</h2>
+                </div>
+                <p class="text-white/70 leading-relaxed text-base sm:text-lg max-w-3xl mx-auto">
+                    José Antonio Molina Miniño, nacido el 4 de junio de 1960 en Santo Domingo, es un icónico director de orquesta, pianista y compositor dominicano. Formado en el Conservatorio Nacional de Música bajo la tutela de Vicente Grisolía, continuó sus estudios en Nueva York, donde obtuvo su licenciatura y maestría en la Manhattan School of Music (1984, 1985), y estudió composición y dirección en Juilliard. En 1984 debutó como pianista con la Orquesta Sinfónica Nacional de la República Dominicana y desde entonces ha dirigido orquestas en Venezuela, Cuba y el Vaticano, colaborando con figuras como Gloria Estefan y Luciano Pavarotti. Ha sido honrado con la Orden de Mérito de Duarte, Sánchez y Mella (2001), un Doctorado Honoris Causa por la Universidad Nacional Pedro Henríquez Ureña (2008), y el premio "El Soberano" (1997). Como Director Titular de la Orquesta Sinfónica Nacional desde 2009, Molina ha elevado la música dominicana a escenarios internacionales, fusionando ritmos clásicos y caribeños con un arte sin igual.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Scrolling Text -->
+    <div class="overflow-hidden py-4 sm:py-8 bg-white text-black border-y border-black/20">
+        <div class="whitespace-nowrap marquee inline-block text-[80px] sm:text-[120px] md:text-[180px] font-light leading-none opacity-90">
+            MAESTRÍA ARMONIOSA      MAESTRÍA ARMONIOSA    
+        </div>
+    </div>
+
+    <!-- Featured Performances -->
+    <section id="actuaciones" class="py-20 sm:py-40 px-4 sm:px-8">
+        <div class="max-w-[2000px] mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 sm:gap-20">
+            <div class="space-y-8 sm:space-y-12 self-center">
+                <div class="space-y-4">
+                    <p class="text-sm tracking-[0.2em] text-white/60">ACTUACIÓN DESTACADA</p>
+                    <h2 class="text-4xl sm:text-5xl font-light tracking-wide font-cormorant">MOLINA & VEITÍA:<br/>MÚSICA EN MOVIMIENTO</h2>
+                </div>
+                <p class="text-white/70 leading-relaxed text-base sm:text-lg">
+                    Únete a nosotros el 31 de mayo de 2025 en el Teatro Nacional Eduardo Brito para un espectáculo vibrante que celebra la dominicanidad. Dirigido por el Maestro José Antonio Molina, este evento combina música sinfónica, danza y tecnología, rindiendo homenaje a la cultura dominicana. Recientemente, el Maestro dirigió un concierto histórico con Anna Netrebko el 6 de febrero de 2025, marcando su debut en la República Dominicana.
+                </p>
+                <a href="https://sinfonia.org.do/agenda/musica-en-movimiento/" target="_blank" class="group w-full sm:w-auto text-sm tracking-[0.2em] hover:text-white/50 transition-colors flex items-center justify-center sm:justify-start gap-6">
+                    VER PROGRAMACIÓN
+                    <span class="h-[1px] w-12 bg-current transform transition-transform group-hover:translate-x-4"></span>
+                </a>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                <img src="https://jaocruz.nyc3.cdn.digitaloceanspaces.com/Molina/1.2" alt="Actuación de la orquesta" class="w-full aspect-[3/4] object-cover hover:scale-[1.02] transition-transform duration-700">
+                <img src="https://jaocruz.nyc3.cdn.digitaloceanspaces.com/Molina/4.png" alt="Director en acción" class="w-full aspect-[3/4] object-cover sm:mt-20 hover:scale-[1.02] transition-transform duration-700">
+            </div>
+        </div>
+    </section>
+
+    <script>
+        function toggleMenu() {
+            const menu = document.querySelector('.mobile-menu');
+            menu.classList.toggle('active');
+            
+            const menuButton = document.querySelector('nav button');
+            const spans = menuButton.querySelectorAll('span');
+            
+            spans.forEach((span, index) => {
+                if (menu.classList.contains('active')) {
+                    span.style.transform = index === 0 ? 'rotate(-45deg)' : 'rotate(45deg)';
+                } else {
+                    span.style.transform = 'none';
+                }
+            });
+        }
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href').substring(1);
+                const targetElement = document.getElementById(targetId);
+                if (targetElement) {
+                    const navHeight = document.querySelector('nav').offsetHeight;
+                    const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - navHeight;
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>

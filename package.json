@@ -4,7 +4,9 @@
   "main": "index.js",
   "scripts": {
     "build": "npx tailwindcss -i ./src/input.css -o ./src/output.css --watch",
-    "start": "vite serve src"
+    "build:prod": "npx tailwindcss -i ./src/input.css -o ./src/output.css",
+    "start": "vite serve src",
+    "dev": "concurrently \"npm run build\" \"npm run start\""
   },
   "keywords": [],
   "author": "",

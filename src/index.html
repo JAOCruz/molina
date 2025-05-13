@@ -68,8 +68,11 @@
                     <p class="text-sm tracking-[0.3em] text-white/60">SOBRE MÍ</p>
                     <h2 class="text-4xl sm:text-5xl font-light tracking-wide font-cormorant">UN LEGADO MUSICAL</h2>
                 </div>
-                <p class="text-white/70 leading-relaxed text-base sm:text-lg max-w-3xl mx-auto">
-                    José Antonio Molina Miniño, nacido el 4 de junio de 1960 en Santo Domingo, es un icónico director de orquesta, pianista y compositor dominicano. Formado en el Conservatorio Nacional de Música bajo la tutela de Vicente Grisolía, continuó sus estudios en Nueva York, donde obtuvo su licenciatura y maestría en la Manhattan School of Music (1984, 1985), y estudió composición y dirección en Juilliard. En 1984 debutó como pianista con la Orquesta Sinfónica Nacional de la República Dominicana y desde entonces ha dirigido orquestas en Venezuela, Cuba y el Vaticano, colaborando con figuras como Gloria Estefan y Luciano Pavarotti. Ha sido honrado con la Orden de Mérito de Duarte, Sánchez y Mella (2001), un Doctorado Honoris Causa por la Universidad Nacional Pedro Henríquez Ureña (2008), y el premio "El Soberano" (1997). Como Director Titular de la Orquesta Sinfónica Nacional desde 2009, Molina ha elevado la música dominicana a escenarios internacionales, fusionando ritmos clásicos y caribeños con un arte sin igual.
+                <p class="text-white/70 leading-relaxed text-base tracking-wide sm:text-lg max-w-3xl mx-auto mb-4">
+                    José Antonio Molina Miniño, nacido el 4 de junio de 1960 en Santo Domingo, es un icónico director de orquesta, pianista y compositor dominicano. Formado en el Conservatorio Nacional de Música bajo la tutela de Vicente Grisolía, continuó sus estudios en Nueva York, donde obtuvo su licenciatura y maestría en la Manhattan School of Music (1984, 1985), y estudió composición y dirección en Juilliard.
+                </p>
+                <p class="text-white/70 leading-relaxed text-base tracking-wide sm:text-lg max-w-3xl mx-auto">
+                    En 1984 debutó como pianista con la Orquesta Sinfónica Nacional de la República Dominicana y desde entonces ha dirigido orquestas en Venezuela, Cuba y el Vaticano, colaborando con figuras como Gloria Estefan y Luciano Pavarotti. Ha sido honrado con la Orden de Mérito de Duarte, Sánchez y Mella (2001), un Doctorado Honoris Causa por la Universidad Nacional Pedro Henríquez Ureña (2008), y el premio "El Soberano" (1997). Como Director Titular de la Orquesta Sinfónica Nacional desde 2009, Molina ha elevado la música dominicana a escenarios internacionales, fusionando ritmos clásicos y caribeños con un arte sin igual.
                 </p>
             </div>
         </div>
@@ -105,8 +108,6 @@
         </div>
     </section>
 
-
-
     <script>
         function toggleMenu() {
             const menu = document.querySelector('.mobile-menu');
@@ -124,10 +125,18 @@
             });
         }
 
-        // Smooth scrolling for navigation links
+        // Smooth scrolling for navigation links and close mobile menu on link click
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
+                
+                // Close the mobile menu if it's open
+                const menu = document.querySelector('.mobile-menu');
+                if (menu.classList.contains('active')) {
+                    toggleMenu();
+                }
+
+                // Smooth scroll to the target section
                 const targetId = this.getAttribute('href').substring(1);
                 const targetElement = document.getElementById(targetId);
                 if (targetElement) {

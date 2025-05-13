@@ -28,9 +28,9 @@
 
     <!-- Mobile Menu -->
     <div class="mobile-menu fixed inset-0 bg-black z-40 flex flex-col justify-center items-center space-y-12 nav-blur md:hidden pt-24 transition-transform duration-500">
-        <a href="#actuaciones" class="text-2xl tracking-[0.2em] hover:text-white/50 transition-colors">ACTUACIONES</a>
-        <a href="#sobre-mi" class="text-2xl tracking-[0.2em] hover:text-white/50 transition-colors">SOBRE MÍ</a>
-        <a href="#" class="text-2xl tracking-[0.2em] hover:text-white/50 transition-colors">CONTACTO</a>
+        <a href="#actuaciones" class="mobile-menu-link text-2xl tracking-[0.2em] hover:text-white/50 transition-colors">ACTUACIONES</a>
+        <a href="#sobre-mi" class="mobile-menu-link text-2xl tracking-[0.2em] hover:text-white/50 transition-colors">SOBRE MÍ</a>
+        <a href="#" class="mobile-menu-link text-2xl tracking-[0.2em] hover:text-white/50 transition-colors">CONTACTO</a>
     </div>
 
     <!-- Hero Section -->
@@ -108,6 +108,11 @@
         </div>
     </section>
 
+    <!-- Footer Section -->
+    <footer class="py-8 text-center text-sm text-white/60">
+        <p>© 2025 José Antonio Molina. Todos los derechos reservados.</p>
+    </footer>
+
     <script>
         function toggleMenu() {
             const menu = document.querySelector('.mobile-menu');
@@ -125,18 +130,18 @@
             });
         }
 
-        // Smooth scrolling for navigation links and close mobile menu on link click
+        // Close mobile menu on link click
+        document.querySelectorAll('.mobile-menu-link').forEach(link => {
+            link.addEventListener('click', function () {
+                toggleMenu();
+            });
+        });
+
+        // Smooth scrolling for navigation links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
                 
-                // Close the mobile menu if it's open
-                const menu = document.querySelector('.mobile-menu');
-                if (menu.classList.contains('active')) {
-                    toggleMenu();
-                }
-
-                // Smooth scroll to the target section
                 const targetId = this.getAttribute('href').substring(1);
                 const targetElement = document.getElementById(targetId);
                 if (targetElement) {

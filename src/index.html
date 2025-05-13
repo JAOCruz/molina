@@ -27,7 +27,7 @@
     </nav>
 
     <!-- Mobile Menu -->
-    <div class="mobile-menu fixed inset-0 bg-black z-40 flex flex-col justify-center items-center space-y-12 nav-blur md:hidden pt-24 transition-transform duration-500">
+    <div class="mobile-menu fixed inset-0 bg-black z-40 flex flex-col justify-center items-center space-y-12 nav-blur md:hidden pt-24 transition-transform duration-500" style="transform: translateY(-100%);">
         <a href="#actuaciones" class="mobile-menu-link text-2xl tracking-[0.2em] hover:text-white/50 transition-colors">ACTUACIONES</a>
         <a href="#sobre-mi" class="mobile-menu-link text-2xl tracking-[0.2em] hover:text-white/50 transition-colors">SOBRE MÍ</a>
         <a href="#" class="mobile-menu-link text-2xl tracking-[0.2em] hover:text-white/50 transition-colors">CONTACTO</a>
@@ -115,6 +115,7 @@
 
     <script>
         function toggleMenu() {
+            console.log('toggleMenu called'); // Debug log
             const menu = document.querySelector('.mobile-menu');
             menu.classList.toggle('active');
             
@@ -130,9 +131,21 @@
             });
         }
 
-        // Close mobile menu on link click
+        // Ensure mobile menu is hidden on page load
+        window.addEventListener('load', function () {
+            console.log('Page loaded, hiding mobile menu'); // Debug log
+            const menu = document.querySelector('.mobile-menu');
+            menu.classList.remove('active');
+        });
+
+        // Close mobile menu on link click (for both click and touch events)
         document.querySelectorAll('.mobile-menu-link').forEach(link => {
             link.addEventListener('click', function () {
+                console.log('Mobile menu link clicked'); // Debug log
+                toggleMenu();
+            });
+            link.addEventListener('touchstart', function () {
+                console.log('Mobile menu link touched'); // Debug log
                 toggleMenu();
             });
         });
@@ -141,6 +154,7 @@
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
+                console.log('Smooth scrolling triggered for:', this.getAttribute('href')); // Debug log
                 
                 const targetId = this.getAttribute('href').substring(1);
                 const targetElement = document.getElementById(targetId);

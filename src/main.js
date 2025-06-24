@@ -110,7 +110,8 @@ function loadImages() {
       'img-awards': import.meta.env.VITE_IMG_AWARDS,
       'img-osn-logo': import.meta.env.VITE_IMG_OSN_LOGO,
       'img-performance1': import.meta.env.VITE_IMG_PERFORMANCE1,
-      'img-performance2': import.meta.env.VITE_IMG_PERFORMANCE2
+      'img-performance2': import.meta.env.VITE_IMG_PERFORMANCE2,
+      'img-papa-molina': import.meta.env.VITE_IMG_PAPA_MOLINA
     };
     
     console.log('Image map:', imageMap);
@@ -138,12 +139,65 @@ function loadImages() {
     });
 }
   
-// Call the function when DOM is loaded
-document.addEventListener('DOMContentLoaded', loadImages);
+// Video loading from environment variables
+function loadVideos() {
+    console.log('Loading videos...');
+    const videoMap = {
+        'video-1': import.meta.env.VITE_VIDEO1,
+        'video-2': import.meta.env.VITE_VIDEO2,
+        'video-3': import.meta.env.VITE_VIDEO3,
+        'video-4': import.meta.env.VITE_VIDEO4
+    };
+    const titleMap = {
+        'video-1': document.querySelector('[data-i18n="video1_title"]').textContent,
+        'video-2': document.querySelector('[data-i18n="video2_title"]').textContent,
+        'video-3': document.querySelector('[data-i18n="video3_title"]').textContent,
+        'video-4': document.querySelector('[data-i18n="video4_title"]').textContent
+    };
+    // Set thumbnail sources
+    Object.entries(videoMap).forEach(([id, src], idx) => {
+        const thumb = document.getElementById(`thumb-${id}`);
+        if (thumb && src) {
+            const source = thumb.querySelector('source');
+            source.src = src;
+            thumb.load();
+        }
+    });
+    // Main video logic
+    const mainVideo = document.getElementById('main-video');
+    const mainSource = mainVideo.querySelector('source');
+    const mainTitle = document.getElementById('main-video-title');
+    // Helper to switch main video
+    function switchMainVideo(id) {
+        mainSource.src = videoMap[id];
+        mainVideo.load();
+        mainTitle.textContent = titleMap[id] || '';
+    }
+    // Default to first video
+    switchMainVideo('video-1');
+    // Add click listeners to thumbs
+    document.querySelectorAll('.video-thumb').forEach(thumbDiv => {
+        thumbDiv.addEventListener('click', function() {
+            const vid = this.getAttribute('data-video');
+            switchMainVideo(vid);
+            // Optional: visually highlight selected thumb
+            document.querySelectorAll('.video-thumb').forEach(t => t.classList.remove('ring-4', 'ring-white'));
+            this.classList.add('ring-4', 'ring-white');
+        });
+    });
+    // Optionally highlight the first thumb by default
+    const firstThumb = document.querySelector('.video-thumb[data-video="video-1"]');
+    if (firstThumb) firstThumb.classList.add('ring-4', 'ring-white');
+}
+
+// Call the functions when DOM is loaded
+document.addEventListener('DOMContentLoaded', () => {
+    loadImages();
+    loadVideos();
+});
 
 // If you're using this as a module, you can also call it immediately
-if (document.readyState === 'loading') {
-  document.addEventListener('DOMContentLoaded', loadImages);
-} else {
-  loadImages();
+if (document.readyState !== 'loading') {
+    loadImages();
+    loadVideos();
 }

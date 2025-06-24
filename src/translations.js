@@ -7,7 +7,7 @@ export const translations = {
         hero_subtitle: "MAESTRO / DIRECTOR",
         hero_button: "CALENDARIO",
         about_subtitle: "SOBRE MÍ",
-        about_title: "UN LEGADO MUSICAL",
+        about_titlerench: "UN LEGADO MUSICAL",
         about_p1: "José Antonio Molina Miniño, nacido el 4 de junio de 1960 en Santo Domingo, es un icónico director de orquesta, pianista y compositor dominicano. Formado en el Conservatorio Nacional de Música bajo la tutela de Vicente Grisolía, continuó sus estudios en Nueva York, donde obtuvo su licenciatura y maestría en la Manhattan School of Music (1984, 1985), y estudió composición y dirección en Juilliard.",
         about_p2: "En 1984 debutó como pianista con la Orquesta Sinfónica Nacional de la República Dominicana y desde entonces ha dirigido orquestas en Venezuela, Cuba y el Vaticano, colaborando con figuras como Gloria Estefan y Luciano Pavarotti. Ha sido honrado con la Orden de Mérito de Duarte, Sánchez y Mella (2001), un Doctorado Honoris Causa por la Universidad Nacional Pedro Henríquez Ureña (2008), y el premio 'El Soberano' (1997). Como Director Titular de la Orquesta Sinfónica Nacional desde 2009, Molina ha elevado la música dominicana a escenarios internacionales, fusionando ritmos clásicos y caribeños con un arte sin igual.",
         marquee: "MAESTRÍA ARMONIOSA      MAESTRÍA ARMONIOSA    ",
@@ -41,7 +41,18 @@ export const translations = {
         bio_awards_img_alt: "Premios y reconocimientos",
         bio_osn_title: "DIRECCIÓN DE LA OSN",
         bio_osn_text: "En marzo del 2009, mediante Decreto Presidencial 245-09, quedó designado como Director Titular de la Orquesta Sinfónica Nacional (OSN). El 22 de febrero de 2011, en conmemoración del 167 Aniversario de la Independencia de nuestra nación, la Embajada de la República Dominicana en los Emiratos Árabes Unidos, en colaboración con 'Abu Dhabi Music and Foundation (ADMAF), se presentó en la ciudad de Damasco, Siria, el concierto 'Caribbean Gems' bajo la dirección del Director de la Orquesta Sinfónica Nacional de la República Dominicana, José Antonio Molina.",
-        bio_osn_img_alt: "Orquesta Sinfónica Nacional"
+        bio_osn_img_alt: "Orquesta Sinfónica Nacional",
+        nav_videos: "VIDEOS",
+        video_subtitle: "VIDEOS DESTACADOS",
+        video_title: "PRESENTACIONES MEMORABLES",
+        video1_title: "Conversatorio: La música como herramienta socio cultural",
+        video2_title: "Sinfonía No. 4 Tchaikovsky",
+        video3_title: "Centro Cultura Digital Indotel",
+        video4_title: "Schumann Sinfonía No. 4",
+        inspiracion_title: "Inspiración",
+        inspiracion_summary: "Maestro Molina recuerda a su padre, Ramón Antonio 'Papá' Molina Pacheco, como su mayor inspiración y crítico más honesto. Más allá de su legado musical y su humildad, lo que más extraña es su sonrisa y la pureza de su alma. La pasión por la música y los valores transmitidos por su padre siguen guiando su vida y arte, manteniéndolos unidos más allá del tiempo.",
+        inspiracion_quote1: "Tuve la gran bendición de tener un padre único e irrepetible, el más tierno, noble, dulce y amoroso de todos.",
+        inspiracion_quote2: "La música ha sido y será siempre la razón y la esencia de nuestra existencia, refiriéndome a una filosofía de vida compartida por mi viejo y yo. Desde el vientre de mi madre, y aún tras su partida terrenal, a mi padre y a mí nos mantendrá visceralmente unidos hasta la eternidad el misterioso mundo de la música."
     },
     en: {
         title: "Maestro José Antonio Molina - Home",
@@ -51,7 +62,7 @@ export const translations = {
         hero_subtitle: "DIRECTOR / CONDUCTOR",
         hero_button: "CALENDAR",
         about_subtitle: "ABOUT ME",
-        about_title: "A MUSICAL LEGACY",
+        about_titlerench: "A MUSICAL LEGACY",
         about_p1: "José Antonio Molina Miniño, born on June 4, 1960, in Santo Domingo, is an iconic Dominican conductor, pianist, and composer. Trained at the National Conservatory of Music under Vicente Grisolía, he continued his studies in New York, earning his bachelor's and master's degrees from the Manhattan School of Music (1984, 1985) and studying composition and conducting at Juilliard.",
         about_p2: "In 1984, he debuted as a pianist with the National Symphony Orchestra of the Dominican Republic and has since conducted orchestras in Venezuela, Cuba, and the Vatican, collaborating with figures like Gloria Estefan and Luciano Pavarotti. He has been honored with the Order of Merit of Duarte, Sánchez, and Mella (2001), an Honorary Doctorate from the National University Pedro Henríquez Ureña (2008), and the 'El Soberano' award (1997). As Principal Conductor of the National Symphony Orchestra since 2009, Molina has elevated Dominican music to international stages, blending classical and Caribbean rhythms with unparalleled artistry.",
         marquee: "HARMONIOUS MASTERY      HARMONIOUS MASTERY    ",
@@ -85,6 +96,17 @@ export const translations = {
         bio_awards_img_alt: "Awards and recognition",
         bio_osn_title: "OSN LEADERSHIP",
         bio_osn_text: "In March 2009, by Presidential Decree 245-09, he was appointed Principal Conductor of the National Symphony Orchestra (OSN). On February 22, 2011, in commemoration of the 167th Anniversary of the Independence of our nation, the Embassy of the Dominican Republic in the United Arab Emirates, in collaboration with the Abu Dhabi Music and Foundation (ADMAF), presented in the city of Damascus, Syria, the concert 'Caribbean Gems' under the direction of the Principal Conductor of the National Symphony Orchestra of the Dominican Republic, José Antonio Molina.",
-        bio_osn_img_alt: "National Symphony Orchestra"
+        bio_osn_img_alt: "National Symphony Orchestra",
+        nav_videos: "VIDEOS",
+        video_subtitle: "FEATURED VIDEOS",
+        video_title: "MEMORABLE PERFORMANCES",
+        video1_title: "Talk: Music as a Socio-Cultural Tool",
+        video2_title: "Tchaikovsky Symphony No. 4",
+        video3_title: "Indotel Digital Culture Center",
+        video4_title: "Schumann Symphony No. 4",
+        inspiracion_title: "Inspiration",
+        inspiracion_summary: "Maestro Molina remembers his father, Ramón Antonio 'Papá' Molina Pacheco, as his greatest inspiration and most honest critic. Beyond his musical legacy and humility, what he misses most is his smile and the purity of his soul. The passion for music and the values passed down by his father continue to guide his life and art, keeping them united beyond time.",
+        inspiracion_quote1: "Tuve la gran bendición de tener un padre único e irrepetible, el más tierno, noble, dulce y amoroso de todos.",
+        inspiracion_quote2: "La música ha sido y será siempre la razón y la esencia de nuestra existencia, refiriéndome a una filosofía de vida compartida por mi viejo y yo. Desde el vientre de mi madre, y aún tras su partida terrenal, a mi padre y a mí nos mantendrá visceralmente unidos hasta la eternidad el misterioso mundo de la música."
     }
-}; 
+};

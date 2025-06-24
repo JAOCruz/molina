@@ -1,5 +1,17 @@
 import { translations } from './translations.js';
 
+// Debug environment variables
+console.log('All environment variables (client-side):', import.meta.env);
+console.log('NODE_ENV:', import.meta.env.NODE_ENV);
+console.log('DEV mode:', import.meta.env.DEV);
+
+// List all VITE_ prefixed variables
+Object.keys(import.meta.env).forEach(key => {
+  if (key.startsWith('VITE_')) {
+    console.log(`Found env var: ${key} = ${import.meta.env[key]}`);
+  }
+});
+
 // Function to update text based on selected language
 function updateLanguage(lang) {
     document.querySelectorAll('[data-i18n]').forEach(element => {
@@ -83,3 +95,55 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         }
     });
 }); 
+
+// Image loading from environment variables
+function loadImages() {
+    console.log('Loading images...');
+    
+    const imageMap = {
+      'img-hero': import.meta.env.VITE_IMG_HERO,
+      'img-profile': import.meta.env.VITE_IMG_PROFILE,
+      'img-cnm-logo': import.meta.env.VITE_IMG_CNM_LOGO,
+      'img-cnm': import.meta.env.VITE_IMG_CNM,
+      'img-director': import.meta.env.VITE_IMG_DIRECTOR,
+      'img-kennedy': import.meta.env.VITE_IMG_KENNEDY,
+      'img-awards': import.meta.env.VITE_IMG_AWARDS,
+      'img-osn-logo': import.meta.env.VITE_IMG_OSN_LOGO,
+      'img-performance1': import.meta.env.VITE_IMG_PERFORMANCE1,
+      'img-performance2': import.meta.env.VITE_IMG_PERFORMANCE2
+    };
+    
+    console.log('Image map:', imageMap);
+  
+    // Set src attribute for each image
+    Object.entries(imageMap).forEach(([id, src]) => {
+      const imgElement = document.getElementById(id);
+      console.log(`Processing ${id}: element found = ${!!imgElement}, src = ${src}`);
+      
+      if (imgElement && src) {
+        imgElement.src = src;
+        
+        imgElement.onerror = function() {
+          console.error(`Failed to load image: ${id} - ${src}`);
+        };
+        
+        imgElement.onload = function() {
+          console.log(`Successfully loaded: ${id}`);
+        };
+      } else if (!src) {
+        console.warn(`No environment variable found for ${id}`);
+      } else if (!imgElement) {
+        console.warn(`No DOM element found with id: ${id}`);
+      }
+    });
+}
+  
+// Call the function when DOM is loaded
+document.addEventListener('DOMContentLoaded', loadImages);
+
+// If you're using this as a module, you can also call it immediately
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', loadImages);
+} else {
+  loadImages();
+}

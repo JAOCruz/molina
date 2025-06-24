@@ -8,7 +8,6 @@ console.log('DEV mode:', import.meta.env.DEV);
 // List all VITE_ prefixed variables
 Object.keys(import.meta.env).forEach(key => {
   if (key.startsWith('VITE_')) {
-    console.log(`Found env var: ${key} = ${import.meta.env[key]}`);
   }
 });
 
@@ -114,12 +113,10 @@ function loadImages() {
       'img-papa-molina': import.meta.env.VITE_IMG_PAPA_MOLINA
     };
     
-    console.log('Image map:', imageMap);
   
     // Set src attribute for each image
     Object.entries(imageMap).forEach(([id, src]) => {
       const imgElement = document.getElementById(id);
-      console.log(`Processing ${id}: element found = ${!!imgElement}, src = ${src}`);
       
       if (imgElement && src) {
         imgElement.src = src;

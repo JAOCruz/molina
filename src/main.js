@@ -198,3 +198,49 @@ if (document.readyState !== 'loading') {
     loadImages();
     loadVideos();
 }
+
+// Fade-in on scroll for about section cards
+function setupFadeInOnScroll() {
+    const observer = new window.IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('fade-in-visible');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.15 });
+    document.querySelectorAll('.fade-in-on-scroll').forEach(el => {
+        observer.observe(el);
+    });
+}
+
+document.addEventListener('DOMContentLoaded', setupFadeInOnScroll);
+
+// Enhanced biography section: scroll-triggered fade-in and parallax
+function setupBiographyAnimations() {
+    // Fade-in on scroll
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    };
+    const fadeInObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('fade-in-on-scroll');
+                fadeInObserver.unobserve(entry.target);
+            }
+        });
+    }, observerOptions);
+    document.querySelectorAll('.biography-card, .floating-image, .image-spotlight').forEach(el => fadeInObserver.observe(el));
+
+    // Parallax effect
+    window.addEventListener('scroll', () => {
+        const scrolled = window.pageYOffset;
+        const parallaxElements = document.querySelectorAll('.parallax-bg');
+        parallaxElements.forEach(el => {
+            const speed = 0.5;
+            el.style.transform = `translateY(${scrolled * speed}px)`;
+        });
+    });
+}
+document.addEventListener('DOMContentLoaded', setupBiographyAnimations);

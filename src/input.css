@@ -30,3 +30,117 @@
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
 }
+
+/* Velvet border and background */
+.velvet-border {
+  border-image: linear-gradient(45deg, #8B4513, #A0522D) 1;
+}
+.bg-velvet {
+  background: linear-gradient(135deg, #8B4513, #A0522D);
+}
+
+/* Floating image effect */
+.floating-image {
+  position: relative;
+  overflow: hidden;
+}
+.floating-image::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+  opacity: 0;
+  transition: opacity 0.6s ease;
+  pointer-events: none;
+}
+.floating-image:hover::before {
+  opacity: 1;
+}
+
+/* Image spotlight effect */
+.image-spotlight {
+  position: relative;
+  background: radial-gradient(ellipse at center, rgba(255,255,255,0.05) 0%, transparent 70%);
+}
+
+/* Text glow */
+.text-glow {
+  text-shadow: 0 0 20px rgba(255,255,255,0.2);
+}
+
+/* Biography card styling */
+.biography-card {
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255,255,255,0.1);
+  transition: all 0.4s cubic-bezier(0.4,0,0.2,1);
+}
+.biography-card:hover {
+  border-color: rgba(255,255,255,0.3);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+}
+
+/* Image mask and diagonal split */
+.image-mask {
+  clip-path: polygon(0 15%, 100% 0, 100% 85%, 0% 100%);
+}
+.diagonal-split {
+  clip-path: polygon(0 0, 85% 0, 100% 100%, 15% 100%);
+}
+
+/* Fade-in on scroll animation */
+.fade-in-on-scroll {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeInUp 0.8s ease forwards;
+}
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Parallax effect */
+.parallax-container {
+  position: relative;
+  overflow: hidden;
+}
+.parallax-bg {
+  position: absolute;
+  top: -20%;
+  left: -20%;
+  width: 140%;
+  height: 140%;
+  background: linear-gradient(45deg, rgba(139,69,19,0.1), rgba(160,82,45,0.1));
+  z-index: -1;
+  transition: transform 0.6s ease;
+}
+.parallax-container:hover .parallax-bg {
+  transform: scale(1.05) rotate(1deg);
+}
+
+/* Ornamental border for headings */
+.ornamental-border {
+  position: relative;
+}
+.ornamental-border::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #8B4513, transparent);
+}
+.ornamental-border::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #A0522D, transparent);
+}

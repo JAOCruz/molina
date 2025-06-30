@@ -77,125 +77,114 @@
             </div>
 
             <!-- Biography Content Section -->
-            <div class="space-y-24  bg-red-950">
+            <div class="space-y-24">
                 <!-- Early Years - Asymmetric Layout -->
                 <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-center">
-                    <div class="lg:col-span-2 biography-card parallax-container p-10 rounded-3xl shadow-2xl">
-                        <div class="parallax-bg"></div>
+                    <div class="lg:col-span-2 biography-card parallax-container p-10 rounded-3xl shadow-2xl bg-gradient-to-b from-black via-gray-900 to-[#2d1a2e] relative overflow-hidden">
+                        <!-- Background image with dark overlay -->
+                        <div class="absolute inset-0 z-0">
+                            <img src="/images/stamp.jpg" alt="Background" class="w-full h-full object-cover opacity-30" style="filter: brightness(0.3) blur(0px);">
+                            <div class="absolute inset-0"></div>
+                        </div>
                         <div class="relative z-10">
+                            <!-- Gold SVG Flourish Above Title -->
+                            <div class="flex justify-center mb-4">
+                            </div>
                             <h4 class="text-2xl font-light mb-6 font-cormorant text-glow ornamental-border pb-4" data-i18n="bio_early_title">FORMACIÓN Y PRIMEROS AÑOS</h4>
-                            <p class="text-white/80 leading-relaxed text-lg mb-6" data-i18n="bio_early_text"></p>
+                            <p class="text-white/80 leading-relaxed text-lg mb-6" data-i18n="bio_early_text">
+                                Nacido en Santo Domingo, José Antonio Molina creció inmerso en un entorno musical, influenciado por su padre, el renombrado "Papá" Molina. Desde temprana edad, mostró un talento innato para la música, comenzando sus estudios de piano en el Conservatorio Nacional de Música de la República Dominicana. Su pasión lo llevó a perfeccionar su arte en prestigiosas instituciones internacionales, incluyendo la Juilliard School, donde desarrolló su distintivo estilo como pianista y director. La combinación de disciplina rigurosa y una conexión profunda con la música dominicana moldeó su identidad artística, sentando las bases para una carrera extraordinaria.
+                            </p>
+                            <!-- Quote Below Paragraph -->
+                            <p class="italic text-blue-300 text-center mb-2 text-lg">"La música es el lenguaje universal del alma."</p>
                         </div>
                     </div>
                     <div class="image-spotlight p-8 rounded-3xl">
-                        <div class="floating-image  rounded-2xl overflow-hidden">
-                            <img id="img-cnm" alt="Conservatorio Nacional de Música" class="w-full h-80 object-cover transition-transform duration-700 hover:scale-110 " data-i18n-alt="bio_early_img_alt">
+                        <div class="floating-image rounded-2xl overflow-hidden">
+                            <img id="img-cnm" alt="Conservatorio Nacional de Música" class="w-full max-w-2xl aspect-[16/5] object-cover rounded-2xl shadow-2xl sm:h-32" data-i18n-alt="bio_early_img_alt">
                         </div>
-
                     </div>
                 </div>
-
                 <!-- International Career - Diagonal Split -->
                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                     <div class="order-2 lg:order-1 relative">
-                        <div class="diagonal-split bg-gradient-to-br from-amber-900/30 to-amber-700/30 p-12 rounded-3xl">
-                            <img id="img-director" alt="Director en acción" class="w-full h-96 object-cover rounded-2xl shadow-2xl">
+                        <div class="diagonal-split bg-gradient-to-br from-blue-900/30 to-blue-700/30 p-12 rounded-3xl">
+                            <img id="img-director" alt="Director en acción" class="w-full h-96 object-cover rounded-2xl shadow-2xl" style="object-position: center 25%;">
                         </div>
-                        <div class="absolute -bottom-6 -right-6 w-24 h-24 bg-gradient-to-br from-amber-700 to-amber-900 rounded-full flex items-center justify-center">
-                            <span class="text-xs font-bold">1990</span>
+
+                    </div>
+                    <div class="order-1 lg:order-2 biography-card p-10 rounded-3xl relative overflow-hidden">
+                        <!-- Background image with dark overlay -->
+                        <div class="absolute inset-0 z-0">
+                            <img src="images/stamp2.jpg" alt="Background" class="w-full h-full object-cover opacity-30" style="filter: brightness(0.4) blur(0px);">
+                            <div class="absolute inset-0"></div>
+                        </div>
+                        <div class="relative z-10">
+                            <h4 class="text-2xl font-light mb-6 font-cormorant text-glow" data-i18n="bio_international_title">CARRERA INTERNACIONAL</h4>
+                            <div class="space-y-4">
+                                <p class="text-white/80 leading-relaxed text-lg" data-i18n="bio_international_text">
+                                    A partir de la década de 1990, José Antonio Molina llevó su talento al escenario global, dirigiendo orquestas de renombre en Europa, América Latina y Estados Unidos. Su debut internacional marcó el inicio de una carrera distinguida, caracterizada por su capacidad para fusionar la precisión técnica con una interpretación apasionada. Ha dirigido en escenarios icónicos como el Carnegie Hall y el Teatro Colón, ganándose el respeto de músicos y audiencias por su enfoque dinámico y su profunda conexión emocional con cada obra.
+                                </p>
+                            </div>
                         </div>
                     </div>
-                    <div class="order-1 lg:order-2 biography-card p-10 rounded-3xl">
-                        <h4 class="text-2xl font-light mb-6 font-cormorant text-glow" data-i18n="bio_international_title">CARRERA INTERNACIONAL</h4>
-                        <div class="space-y-4">
-                            <p class="text-white/80 leading-relaxed text-lg" data-i18n="bio_international_text"></p>
-                        </div>
-                    </div>
+                </div>
+                <div class="flex justify-center my-12">
+                  <svg width="200" height="16" viewBox="0 0 200 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M0 8 Q25 0 50 8 T100 8 T150 8 T200 8" stroke="#d1d5db" stroke-width="2" fill="none"/>
+                    <path d="M0 8 Q25 16 50 8 T100 8 T150 8 T200 8" stroke="#d1d5db" stroke-width="2" fill="none"/>
+                  </svg>
                 </div>
 
                 <!-- Notable Collaborations - Full Width Spotlight -->
                 <div class="relative">
-                    <div class="absolute inset-0 bg-gradient-to-r from-transparent via-amber-900/20 to-transparent"></div>
-                    <div class="relative biography-card p-12 rounded-3xl text-center">
-                        <h4 class="text-3xl font-light mb-8 font-cormorant text-glow" data-i18n="bio_collab_title">COLABORACIONES DESTACADAS</h4>
-                        <p class="text-white/80 leading-relaxed text-lg max-w-4xl mx-auto" data-i18n="bio_collab_text"></p>
+                    <div class="absolute inset-0 bg-gradient-to-r from-transparent via-blue-900/20 to-transparent"></div>
+                    <div class="relative biography-card p-12 rounded-3xl text-center overflow-hidden">
+                        <!-- Background image with dark overlay -->
+                        <div class="absolute inset-0 z-0">
+                            <img src="images/stamp3.jpg" alt="Background" class="w-full h-full object-cover opacity-30" style="filter: brightness(0.4) blur(0px);">
+                            <div class="absolute inset-0"></div>
+                        </div>
+                        <div class="relative z-10">
+                            <h4 class="text-3xl font-light mb-8 font-cormorant text-glow" data-i18n="bio_collab_title">COLABORACIONES DESTACADAS</h4>
+                            <p class="text-white/80 leading-relaxed text-lg max-w-4xl mx-auto" data-i18n="bio_collab_text">
+                                A lo largo de su carrera, el Maestro Molina ha colaborado con artistas de talla mundial como Anna Netrebko, Plácido Domingo y Yo-Yo Ma, creando momentos musicales inolvidables. Sus proyectos han abarcado desde óperas hasta sinfonías y producciones crossover que integran géneros populares y clásicos. Estas colaboraciones destacan su versatilidad y su habilidad para unir culturas a través de la música, consolidando su reputación como un visionario en el arte sinfónico.
+                            </p>
+                        </div>
                     </div>
+                </div>
+                <div class="flex justify-center my-12">
+                  <svg width="200" height="16" viewBox="0 0 200 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M0 8 Q25 0 50 8 T100 8 T150 8 T200 8" stroke="#d1d5db" stroke-width="2" fill="none"/>
+                    <path d="M0 8 Q25 16 50 8 T100 8 T150 8 T200 8" stroke="#d1d5db" stroke-width="2" fill="none"/>
+                  </svg>
                 </div>
 
-                <!-- Works and Productions - Overlapping Layout -->
-                <div class="relative">
-                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                        <div class="biography-card p-10 rounded-3xl lg:mr-8">
-                            <h4 class="text-2xl font-light mb-6 font-cormorant text-glow" data-i18n="bio_works_title">OBRAS Y PRODUCCIONES</h4>
-                            <div class="space-y-4">
-                                <p class="text-white/80 leading-relaxed" data-i18n="bio_works_text"></p>
-                            </div>
-                        </div>
-                        <div class="lg:-ml-8 lg:mt-12">
-                            <div class="image-mask bg-gradient-to-br from-amber-900/40 to-transparent p-8 rounded-3xl">
-                                <img id="img-kennedy" alt="Kennedy Center" class="w-full h-72 object-cover rounded-2xl shadow-2xl" data-i18n-alt="bio_works_img_alt">
-                            </div>
-                        </div>
-                    </div>
-                </div>
 
-                <!-- Recording Industry - Vinyl Record Inspired -->
-                <div class="biography-card p-12 rounded-3xl relative overflow-hidden">
-                    <div class="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-amber-700/30 to-transparent rounded-full -mr-16 -mt-16"></div>
-                    <div class="absolute bottom-0 left-0 w-24 h-24 bg-gradient-to-tr from-amber-900/30 to-transparent rounded-full -ml-12 -mb-12"></div>
-                    <div class="relative z-10">
-                        <h4 class="text-2xl font-light mb-6 font-cormorant text-glow flex items-center" data-i18n="bio_recording_title">
-                            <span class="mr-4">🎼</span>
-                            INDUSTRIA DE LA GRABACIÓN
-                        </h4>
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                            <div>
-                                <p class="text-white/70 leading-relaxed text-m mb-4" data-i18n="bio_recording_text"></p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Awards - Trophy Layout -->
-                <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-center">
-                    <div class="order-2 lg:order-1 flex justify-center">
-                        <div class="relative">
-                            <div class="absolute inset-0 bg-gradient-to-r from-amber-700/30 via-yellow-500/30 to-amber-700/30 rounded-full blur-2xl"></div>
-                            <img id="img-awards" alt="Premios" class="relative w-64 h-80 object-cover rounded-2xl shadow-2xl" data-i18n-alt="bio_awards_img_alt">
-                        </div>
-                    </div>
-                    <div class="lg:col-span-2 order-1 lg:order-2 biography-card p-10 rounded-3xl">
-                        <h4 class="text-2xl font-light mb-6 font-cormorant text-glow" data-i18n="bio_awards_title">RECONOCIMIENTOS Y PREMIOS</h4>
-                        <div class="space-y-4">
-                            <p class="text-white/80" data-i18n="bio_awards_text"></p>
-                        </div>
-                    </div>
-                </div>
 
                 <!-- Recent Achievements - Timeline Style -->
-                <div class="biography-card p-12 rounded-3xl">
+                <div class="biography-card p-12 rounded-3xl bg-gradient-to-b from-blue-900 via-blue-800 to-black">
                     <h4 class="text-3xl font-light mb-12 font-cormorant text-glow text-center" data-i18n="logros_title">LOGROS RECIENTES</h4>
                     <div class="relative">
                         <!-- Timeline line -->
-                        <div class="absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-gradient-to-b from-amber-700 to-amber-900"></div>
+                        <div class="absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-gradient-to-b from-blue-700 to-blue-900"></div>
                         <!-- Timeline items -->
                         <div class="space-y-16">
                             <div class="flex items-center">
                                 <div class="w-1/2 pr-8 text-right">
                                     <div class="bg-white/5 p-6 rounded-2xl">
-                                        <h5 class="text-amber-200 font-semibold mb-2" data-i18n="logros_2021">2021</h5>
+                                        <h5 class="text-blue-200 font-semibold mb-2">2021</h5>
                                         <p class="text-white/80" data-i18n="logros_2021"></p>
                                     </div>
                                 </div>
-                                <div class="w-8 h-8 bg-amber-700 rounded-full border-4 border-black flex-shrink-0 z-10"></div>
+                                <div class="w-8 h-8 bg-blue-700 rounded-full border-4 border-black flex-shrink-0 z-10 timeline-dot"></div>
                                 <div class="w-1/2 pl-8"></div>
                             </div>
                             <div class="flex items-center">
                                 <div class="w-1/2 pr-8"></div>
-                                <div class="w-8 h-8 bg-amber-600 rounded-full border-4 border-black flex-shrink-0 z-10"></div>
+                                <div class="w-8 h-8 bg-blue-600 rounded-full border-4 border-black flex-shrink-0 z-10 timeline-dot"></div>
                                 <div class="w-1/2 pl-8">
-                                    <div class="bg-amber-900/20 p-6 rounded-2xl">
-                                        <h5 class="text-amber-200 font-semibold mb-2" data-i18n="logros_2023">2023</h5>
+                                    <div class="bg-blue-900/20 p-6 rounded-2xl">
+                                        <h5 class="text-blue-200 font-semibold mb-2">2023</h5>
                                         <p class="text-white/80" data-i18n="logros_2023"></p>
                                     </div>
                                 </div>
@@ -203,36 +192,40 @@
                             <div class="flex items-center">
                                 <div class="w-1/2 pr-8 text-right">
                                     <div class="bg-white/10 p-6 rounded-2xl">
-                                        <h5 class="text-amber-200 font-semibold mb-2" data-i18n="logros_2024">2024</h5>
+                                        <h5 class="text-blue-200 font-semibold mb-2">2024</h5>
                                         <p class="text-white/80" data-i18n="logros_2024"></p>
                                     </div>
                                 </div>
-                                <div class="w-8 h-8 bg-yellow-500 rounded-full border-4 border-black flex-shrink-0 z-10"></div>
+                                <div class="w-8 h-8 bg-blue-500 rounded-full border-4 border-black flex-shrink-0 z-10 timeline-dot"></div>
                                 <div class="w-1/2 pl-8"></div>
                             </div>
                         </div>
                     </div>
                 </div>
 
+
                 <!-- Latest Performance - Spotlight Finish -->
                 <div class="relative text-center">
                     <div class="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent"></div>
                     <div class="relative biography-card p-12 rounded-3xl">
-                        <div class="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-amber-700 to-amber-900 rounded-full mb-6">
+                        <div class="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-blue-700 to-blue-900 rounded-full mb-6">
                             <span class="text-2xl">🌟</span>
                         </div>
                         <h4 class="text-3xl font-light mb-6 font-cormorant text-glow" data-i18n="ultima_title">ÚLTIMA PRESENTACIÓN</h4>
-                        <p class="text-xl text-white/90 leading-relaxed max-w-3xl mx-auto" data-i18n="ultima_text"></p>
+                        <p class="text-xl text-white/90 leading-relaxed max-w-3xl mx-auto" data-i18n="ultima_text">
+                            El 6 de febrero de 2025, el Maestro Molina dirigió un concierto histórico con la renombrada soprano Anna Netrebko en el Teatro Nacional Eduardo Brito, marcando su debut en la República Dominicana. Esta presentación, que combinó arias clásicas con arreglos dominicanos, fue un hito en su carrera, celebrando la unión de la música universal con la identidad caribeña.
+                        </p>
                         <div class="mt-8 flex justify-center">
-                            <div class="w-2 h-2 bg-amber-500 rounded-full mx-1"></div>
-                            <div class="w-2 h-2 bg-amber-600 rounded-full mx-1"></div>
-                            <div class="w-2 h-2 bg-amber-700 rounded-full mx-1"></div>
+                            <div class="w-2 h-2 bg-blue-500 rounded-full mx-1"></div>
+                            <div class="w-2 h-2 bg-blue-600 rounded-full mx-1"></div>
+                            <div class="w-2 h-2 bg-blue-700 rounded-full mx-1"></div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
+
     <!-- Scrolling Text -->
     <div class="overflow-hidden py-4 sm:py-8 bg-white text-black border-y border-black/20">
         <div class="whitespace-nowrap marquee inline-block text-[80px] sm:text-[120px] md:text-[180px] font-light leading-none opacity-90" data-i18n="marquee">

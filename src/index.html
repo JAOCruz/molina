@@ -158,49 +158,48 @@
                     <path d="M0 8 Q25 16 50 8 T100 8 T150 8 T200 8" stroke="#d1d5db" stroke-width="2" fill="none"/>
                   </svg>
                 </div>
-
-                <!-- Recent Achievements - Timeline Style -->
-                <div class="biography-card p-6 sm:p-12 rounded-3xl bg-gradient-to-b from-blue-900 via-blue-800 to-black">
-                    <h4 class="text-3xl font-light mb-12 font-cormorant text-glow text-center" data-i18n="logros_title">LOGROS RECIENTES</h4>
-                    <div class="relative">
-                        <!-- Timeline line - responsive positioning -->
-                        <div class="absolute left-4 lg:left-1/2 lg:transform lg:-translate-x-1/2 w-1 h-full bg-gradient-to-b from-blue-700 to-blue-900"></div>
-                        <!-- Timeline items -->
-                        <div class="space-y-8 lg:space-y-16">
-                            <div class="flex flex-col lg:flex-row items-start lg:items-center">
-                                <div class="w-full lg:w-1/2 lg:pr-8 lg:text-right text-left pl-12 lg:pl-0 mb-4 lg:mb-0">
-                                    <div class="bg-white/5 p-6 rounded-2xl">
-                                        <h5 class="text-blue-200 font-semibold mb-2">2021</h5>
-                                        <p class="text-white/80" data-i18n="logros_2021">Debut con la Orquesta Sinfónica Nacional</p>
-                                    </div>
-                                </div>
-                                <div class="absolute left-0 lg:relative lg:left-auto w-8 h-8 bg-blue-700 rounded-full border-4 border-black flex-shrink-0 z-10 timeline-dot mb-4 lg:mb-0"></div>
-                                <div class="w-full lg:w-1/2 lg:pl-8 hidden lg:block"></div>
-                            </div>
-                            <div class="flex flex-col lg:flex-row items-start lg:items-center">
-                                <div class="w-full lg:w-1/2 lg:pr-8 lg:text-right text-left pl-12 lg:pl-0 mb-4 lg:mb-0">
-                                    <div class="bg-white/10 p-6 rounded-2xl">
-                                        <h5 class="text-blue-200 font-semibold mb-2">2023</h5>
-                                        <p class="text-white/80" data-i18n="logros_2023">Colaboración internacional destacada</p>
-                                    </div>
-                                </div>
-                                <div class="absolute left-0 lg:relative lg:left-auto w-8 h-8 bg-blue-600 rounded-full border-4 border-black flex-shrink-0 z-10 timeline-dot mb-4 lg:mb-0"></div>
-                                <div class="w-full lg:w-1/2 lg:pl-8 hidden lg:block"></div>
-                            </div>
-                            <div class="flex flex-col lg:flex-row items-start lg:items-center">
-                                <div class="w-full lg:w-1/2 lg:pr-8 lg:text-right text-left pl-12 lg:pl-0 mb-4 lg:mb-0">
-                                    <div class="bg-white/10 p-6 rounded-2xl">
-                                        <h5 class="text-blue-200 font-semibold mb-2">2024</h5>
-                                        <p class="text-white/80" data-i18n="logros_2024">Presentación en Teatro Nacional</p>
-                                    </div>
-                                </div>
-                                <div class="absolute left-0 lg:relative lg:left-auto w-8 h-8 bg-blue-800 rounded-full border-4 border-black flex-shrink-0 z-10 timeline-dot mb-4 lg:mb-0"></div>
-                                <div class="w-full lg:w-1/2 lg:pl-8 hidden lg:block"></div>
+        <!-- Recent Achievements - Timeline Style -->
+        <div class="biography-card p-6 sm:p-12 rounded-3xl bg-gradient-to-b from-blue-900 via-blue-800 to-black">
+            <h4 class="text-3xl font-light mb-12 font-cormorant text-glow text-center" data-i18n="logros_title">LOGROS RECIENTES</h4>
+            <div class="relative">
+                <!-- Timeline line -->
+                <div class="absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-gradient-to-b from-blue-700 to-blue-900 hidden lg:block"></div>
+                <div class="absolute left-4 w-1 h-full bg-gradient-to-b from-blue-700 to-blue-900 lg:hidden"></div>
+                <!-- Timeline items -->
+                <div class="space-y-12 lg:space-y-16">
+                    <div class="flex flex-col lg:flex-row items-start lg:items-center relative">
+                        <div class="w-full lg:w-1/2 lg:pr-12 lg:text-right pl-12 lg:pl-0 mb-4 lg:mb-0 order-2 lg:order-1">
+                            <div class="bg-white/5 p-6 rounded-2xl">
+                                <h5 class="text-blue-200 font-semibold mb-2">2021</h5>
+                                <p class="text-white/80" data-i18n="logros_2021">Debut con la Orquesta Sinfónica Nacional</p>
                             </div>
                         </div>
+                        <div class="absolute left-1/2 transform -translate-x-1/2 w-8 h-8 bg-blue-700 rounded-full border-4 border-black z-10 lg:static mb-4 lg:mb-0 order-1 lg:order-2 timeline-dot"></div>
+                        <div class="w-full lg:w-1/2 lg:pl-12 order-3 hidden lg:block"></div>
+                    </div>
+                    <div class="flex flex-col lg:flex-row items-start lg:items-center relative">
+                        <div class="w-full lg:w-1/2 lg:pl-12 lg:text-left pl-12 lg:pl-0 mb-4 lg:mb-0 order-2 lg:order-3">
+                            <div class="bg-white/10 p-6 rounded-2xl">
+                                <h5 class="text-blue-200 font-semibold mb-2">2023</h5>
+                                <p class="text-white/80" data-i18n="logros_2023">Colaboración internacional destacada</p>
+                            </div>
+                        </div>
+                        <div class="absolute left-1/2 transform -translate-x-1/2 w-8 h-8 bg-blue-600 rounded-full border-4 border-black z-10 lg:static mb-4 lg:mb-0 order-1 lg:order-2 timeline-dot"></div>
+                        <div class="w-full lg:w-1/2 lg:pr-12 lg:text-right order-3 lg:order-1 hidden lg:block"></div>
+                    </div>
+                    <div class="flex flex-col lg:flex-row items-start lg:items-center relative">
+                        <div class="w-full lg:w-1/2 lg:pr-12 lg:text-right pl-12 lg:pl-0 mb-4 lg:mb-0 order-2 lg:order-1">
+                            <div class="bg-white/5 p-6 rounded-2xl">
+                                <h5 class="text-blue-200 font-semibold mb-2">2024</h5>
+                                <p class="text-white/80" data-i18n="logros_2024">Presentación en Teatro Nacional</p>
+                            </div>
+                        </div>
+                        <div class="absolute left-1/2 transform -translate-x-1/2 w-8 h-8 bg-blue-800 rounded-full border-4 border-black z-10 lg:static mb-4 lg:mb-0 order-1 lg:order-2 timeline-dot"></div>
+                        <div class="w-full lg:w-1/2 lg:pl-12 order-3 hidden lg:block"></div>
                     </div>
                 </div>
-
+            </div>
+        </div>
 
                 <!-- Latest Performance - Spotlight Finish -->
                 <div class="relative text-center">

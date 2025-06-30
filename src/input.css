@@ -2,185 +2,122 @@
 @tailwind components;
 @tailwind utilities;
 
-@keyframes marquee {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(-50%); }
+/* Global Styles */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-black text-white font-montserrat selection:bg-white selection:text-black;
+  }
 }
 
-@keyframes reveal {
-    0% { transform: scaleX(0); transform-origin: left; }
-    100% { transform: scaleX(1); transform-origin: left; }
-}
+/* Custom Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&family=Cormorant+Garamond:wght@300;400;500&display=swap');
 
-@keyframes float {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-20px); }
-}
-
-.marquee {
-    animation: marquee 30s linear infinite;
-}
-
-.reveal-line {
-    animation: reveal 1.5s cubic-bezier(0.77, 0, 0.175, 1) forwards;
-}
-
+/* Navigation */
 .nav-blur {
-    background: rgba(0, 0, 0, 0.7);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
+  @apply backdrop-blur-md bg-black/50 border-white/10;
 }
 
-.img-director-position {
-  object-position: center top;
+/* Mobile Menu */
+.mobile-menu {
+  @apply fixed inset-0 bg-black z-40 flex flex-col justify-center items-center space-y-12 nav-blur md:hidden pt-24 transition-transform duration-500;
+}
+.mobile-menu-link {
+  @apply text-2xl tracking-[0.2em] hover:text-white/50 transition-colors;
 }
 
-/* Velvet border and background */
-.velvet-border {
-  border-image: linear-gradient(45deg, #8B4513, #A0522D) 1;
+/* Hero Section */
+.animate-fade-in {
+  animation: fadeIn 1s ease-in-out forwards;
 }
-.bg-velvet {
-  background: linear-gradient(135deg, #8B4513, #A0522D);
-}
-
-/* Floating image effect */
-.floating-image {
-  position: relative;
-  overflow: hidden;
-}
-.floating-image::before {
-  content: '';
-  position: absolute;
-  top: -50%;
-  left: -50%;
-  width: 200%;
-  height: 200%;
-  background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
-  opacity: 0;
-  transition: opacity 0.6s ease;
-  pointer-events: none;
-}
-.floating-image:hover::before {
-  opacity: 1;
-}
-
-/* Image spotlight effect */
-.image-spotlight {
-  position: relative;
-  background: radial-gradient(ellipse at center, rgba(255,255,255,0.05) 0%, transparent 70%);
-}
-
-/* Text glow */
-.text-glow {
-  text-shadow:
-    0 0 10px rgba(217, 119, 6, 0.3),
-    0 0 20px rgba(217, 119, 6, 0.2),
-    0 0 30px rgba(217, 119, 6, 0.1);
-}
-
-/* Biography card styling */
-.biography-card {
-  backdrop-filter: blur(10px);
-  border: 2px solid rgba(255,255,255,0.2);
-  transition: all 0.4s cubic-bezier(0.4,0,0.2,1);
-}
-.biography-card:hover {
-  border-width: 4px;
-  border-color: #60a5fa;
-  box-shadow: 0 0 24px 4px rgba(96,165,250,0.4);
-}
-
-/* Image mask and diagonal split */
-.image-mask {
-  clip-path: polygon(0 15%, 100% 0, 100% 85%, 0% 100%);
-}
-.diagonal-split {
-  clip-path: polygon(0 0, 85% 0, 100% 100%, 15% 100%);
-}
-
-/* Fade-in on scroll animation */
-.fade-in-on-scroll {
-  opacity: 0;
-  transform: translateY(30px);
-  animation: fadeInUp 0.8s ease forwards;
-}
-@keyframes fadeInUp {
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
   to {
     opacity: 1;
     transform: translateY(0);
   }
 }
 
-/* Parallax effect */
-.parallax-container {
-  position: relative;
-  overflow: hidden;
+/* Biography Section */
+.biography-card {
+  @apply relative rounded-3xl shadow-2xl;
 }
-.parallax-bg {
-  position: absolute;
-  top: -20%;
-  left: -20%;
-  width: 140%;
-  height: 140%;
-  background: linear-gradient(45deg, rgba(139,69,19,0.1), rgba(160,82,45,0.1));
-  z-index: -1;
-  transition: transform 0.6s ease;
+.text-glow {
+  @apply text-white;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
 }
-.parallax-container:hover .parallax-bg {
-  transform: scale(1.05) rotate(1deg);
-}
-
-/* Ornamental Borders */
 .ornamental-border {
-  position: relative;
-  padding-bottom: 20px;
+  @apply border-b border-white/20;
 }
-.ornamental-border::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 100px;
-  height: 3px;
-  background: linear-gradient(90deg, transparent, #d97706, #fbbf24, #d97706, transparent);
-  border-radius: 2px;
+.parallax-container {
+  @apply relative overflow-hidden;
 }
-.ornamental-border::before {
-  content: '◆ ◇ ◆';
-  position: absolute;
-  bottom: -15px;
-  left: 50%;
-  transform: translateX(-50%);
-  color: #d97706;
-  font-size: 12px;
-  letter-spacing: 8px;
+.floating-image {
+  @apply transition-transform duration-700 hover:scale-[1.02];
+}
+.diagonal-split {
+  @apply relative overflow-hidden;
+  clip-path: polygon(0 10%, 100% 0, 100% 90%, 0 100%);
 }
 
-/* Timeline Dot Pulse */
+/* Timeline Styles */
 .timeline-dot {
-  position: relative;
-  width: 32px;
-  height: 32px;
-  background: #2563eb; /* Tailwind blue-600 */
-  border-radius: 50%;
-  border: 4px solid #000;
-  z-index: 1;
+  @apply w-8 h-8 rounded-full border-4 border-black z-10 transition-transform duration-300 ease-in-out;
 }
-.timeline-dot::before {
-  content: '';
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 40px;
-  height: 40px;
-  background: radial-gradient(circle, rgba(37,99,235,0.3), transparent);
-  border-radius: 50%;
-  animation: pulse 2s ease-in-out infinite;
-  z-index: 0;
+.biography-card:hover .timeline-dot {
+  @apply scale-125;
 }
-@keyframes pulse {
-  0%, 100% { transform: translate(-50%, -50%) scale(1); opacity: 1; }
-  50% { transform: translate(-50%, -50%) scale(1.5); opacity: 0.5; }
+
+/* Mobile-specific timeline adjustments */
+@media (max-width: 1023px) {
+  .timeline-dot {
+    @apply left-2 transform-none;
+  }
+  .biography-card .flex-col > div {
+    @apply pl-10; /* Adjusted padding for mobile */
+  }
+}
+
+/* Desktop-specific timeline adjustments */
+@media (min-width: 1024px) {
+  .biography-card .flex-row > div:nth-child(1) {
+    @apply order-1;
+  }
+  .biography-card .flex-row > div:nth-child(3) {
+    @apply order-3;
+  }
+  .biography-card .flex-row:nth-child(even) > div:nth-child(1) {
+    @apply text-left pl-12 pr-0;
+  }
+  .biography-card .flex-row:nth-child(even) > div:nth-child(3) {
+    @apply text-right pr-12 pl-0;
+  }
+}
+
+/* Marquee */
+.marquee {
+  animation: marquee 20s linear infinite;
+}
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* General Utility Classes */
+@layer utilities {
+  .tracking-[0.2em] {
+    letter-spacing: 0.2em;
+  }
+  .tracking-[0.3em] {
+    letter-spacing: 0.3em;
+  }
 }

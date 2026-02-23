@@ -4,298 +4,409 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title data-i18n="title">Maestro José Antonio Molina - Página Principal</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&family=Cormorant+Garamond:wght@300;400;500&display=swap" rel="stylesheet">
-  <script type="module" crossorigin src="/assets/index-DmQqAkpO.js"></script>
-  <link rel="stylesheet" crossorigin href="/assets/index-DB2y5Ini.css">
+    <meta name="description" content="Maestro José Antonio Molina — Director Titular de la Orquesta Sinfónica Nacional de la República Dominicana. Conductor, composer, pianist.">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎵</text></svg>">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
+  <script type="module" crossorigin src="/assets/index-CN3lQGhb.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/index-D0Evufxi.css">
 </head>
-<body class="bg-black text-white font-montserrat selection:bg-white selection:text-black">
+<body class="bg-black text-white font-montserrat">
+
+    <!-- Grain overlay for cinematic texture -->
+    <div class="grain-overlay" aria-hidden="true"></div>
+
+    <!-- Preloader -->
+    <div class="preloader" id="preloader">
+        <div class="preloader-baton" style="position: relative;"></div>
+        <div class="preloader-text">MAESTRO MOLINA</div>
+    </div>
+
+    <!-- Custom Cursor -->
+    <div class="custom-cursor" id="cursor"></div>
+    <div class="custom-cursor-dot" id="cursor-dot"></div>
+
     <!-- Navigation -->
-    <nav class="fixed w-full z-50 nav-blur border-b ">
+    <nav class="fixed w-full z-50 nav-blur border-b">
         <div class="max-w-[2000px] mx-auto px-4 sm:px-8">
-            <div class="flex justify-between h-24 items-center">
-                <div class="text-2xl sm:text-3xl font-light tracking-[0.3em] font-cormorant">JOSE ANTONIO MOLINA</div>
-                <div class="hidden md:flex items-center space-x-16 text-xs tracking-[0.2em]">
-                    <a href="#CALENDARIO" class="hover:underline" data-i18n="nav_calendar">CALENDARIO</a>
-                    <a href="#sobre-mi" class="hover:underline" data-i18n="nav_about">SOBRE MÍ</a>
-                    <a href="#VIDEOS" class="hover:underline" data-i18n="nav_videos">VIDEOS</a>
-                    <a href="#" class="hover:underline" data-i18n="nav_contact">CONTACTO</a>
-                    <select id="language-switcher" class="bg-transparent text-white text-xs tracking-[0.2em] border-none focus:outline-none">
-                        <option value="es">ESPAÑOL</option>
-                        <option value="en">ENGLISH</option>
+            <div class="flex justify-between h-20 lg:h-24 items-center">
+                <a href="#" class="text-xl sm:text-2xl lg:text-3xl font-light tracking-[0.25em] font-cormorant text-white hover:text-gold-500 transition-colors duration-300">
+                    JOSÉ ANTONIO MOLINA
+                </a>
+                <div class="hidden md:flex items-center space-x-10 lg:space-x-16 text-[11px] tracking-[0.2em] font-light">
+                    <a href="#CALENDARIO" class="nav-link" data-i18n="nav_calendar">CALENDARIO</a>
+                    <a href="#sobre-mi" class="nav-link" data-i18n="nav_about">SOBRE MÍ</a>
+                    <a href="#VIDEOS" class="nav-link" data-i18n="nav_videos">VIDEOS</a>
+                    <a href="#contacto" class="nav-link" data-i18n="nav_contact">CONTACTO</a>
+                    <select id="language-switcher" class="bg-transparent text-white/60 text-[11px] tracking-[0.2em] border border-white/10 rounded px-2 py-1 focus:outline-none focus:border-gold-500/40 transition-colors">
+                        <option value="es" class="bg-black">ES</option>
+                        <option value="en" class="bg-black">EN</option>
                     </select>
                 </div>
                 <button class="md:hidden w-8 h-8 flex flex-col justify-center space-y-2" onclick="toggleMenu()" aria-label="Alternar menú">
-                    <span class="w-full h-[1px] bg-white transform transition-transform origin-right"></span>
-                    <span class="w-full h-[1px] bg-white transform transition-transform origin-right"></span>
+                    <span class="w-full h-[1px] bg-white transform transition-transform duration-300 origin-right"></span>
+                    <span class="w-full h-[1px] bg-white transform transition-transform duration-300 origin-right"></span>
                 </button>
             </div>
         </div>
     </nav>
 
     <!-- Mobile Menu -->
-    <div class="mobile-menu fixed inset-0 bg-black z-40 flex flex-col justify-center items-center space-y-12 nav-blur md:hidden pt-24 transition-transform duration-500" style="transform: translateY(-100%);">
-        <a href="#CALENDARIO" class="mobile-menu-link text-2xl tracking-[0.2em] hover:text-white/50 transition-colors" data-i18n="nav_calendar">CALENDARIO</a>
-        <a href="#sobre-mi" class="mobile-menu-link text-2xl tracking-[0.2em] hover:text-white/50 transition-colors" data-i18n="nav_about">SOBRE MÍ</a>
-        <a href="#VIDEOS" class="mobile-menu-link text-2xl tracking-[0.2em] hover:text-white/50 transition-colors" data-i18n="nav_videos">VIDEOS</a>
-        <a href="#" class="mobile-menu-link text-2xl tracking-[0.2em] hover:text-white/50 transition-colors" data-i18n="nav_contact">CONTACTO</a>
-        <select id="language-switcher-mobile" class="bg-transparent text-black text-xl tracking-[0.2em] border-none focus:outline-none">
-            <option value="es">Español</option>
-            <option value="en">English</option>
+    <div class="mobile-menu fixed inset-0 bg-black/98 z-40 flex flex-col justify-center items-center space-y-10 md:hidden pt-24">
+        <a href="#CALENDARIO" class="mobile-menu-link text-xl tracking-[0.25em] text-white/80 hover:text-gold-500 transition-colors duration-300" data-i18n="nav_calendar">CALENDARIO</a>
+        <a href="#sobre-mi" class="mobile-menu-link text-xl tracking-[0.25em] text-white/80 hover:text-gold-500 transition-colors duration-300" data-i18n="nav_about">SOBRE MÍ</a>
+        <a href="#VIDEOS" class="mobile-menu-link text-xl tracking-[0.25em] text-white/80 hover:text-gold-500 transition-colors duration-300" data-i18n="nav_videos">VIDEOS</a>
+        <a href="#contacto" class="mobile-menu-link text-xl tracking-[0.25em] text-white/80 hover:text-gold-500 transition-colors duration-300" data-i18n="nav_contact">CONTACTO</a>
+        <select id="language-switcher-mobile" class="bg-transparent text-white/60 text-lg tracking-[0.2em] border border-white/10 rounded px-4 py-2 focus:outline-none mt-4">
+            <option value="es" class="bg-black">Español</option>
+            <option value="en" class="bg-black">English</option>
         </select>
     </div>
 
-    <!-- Hero Section -->
-    <section class="min-h-screen relative flex items-center">
+    <!-- ═══════════════════════════════════════════
+         HERO SECTION
+         ═══════════════════════════════════════════ -->
+    <section class="min-h-screen relative flex items-end pb-20 sm:pb-32 overflow-hidden">
         <div class="absolute inset-0">
-            <img id="img-hero" alt="Director de orquesta dirigiendo una sinfonía" class="w-full h-full object-cover">
-            <div class="absolute inset-0 bg-gradient-to-r from-black/50 to-black/30 md:bg-gradient-to-b md:from-black/30 md:to-black/70"></div>
+            <img id="img-hero" alt="Director de orquesta dirigiendo una sinfonía" class="hero-parallax-img w-full h-full object-cover" loading="eager">
+            <div class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-black/20"></div>
+            <div class="absolute inset-0 bg-gradient-to-r from-black/60 to-transparent"></div>
         </div>
-        <div class="relative z-10 max-w-[2000px] mx-auto px-4 sm:px-8 pt-32">
-            <div class="max-w-4xl">
-                <p class="text-sm tracking-[0.3em] mb-8 animate-fade-in" style="animation-delay: 0.5s" data-i18n="hero_subtitle">MAESTRO / DIRECTOR</p>
-                <h1 class="text-[12vw] md:text-[7vw] font-light leading-[0.9] mb-8 font-cormorant animate-fade-in" style="animation-delay: 0.8s">
-                    JOSE ANTONIO<br/>MOLINA
+        <div class="relative z-10 max-w-[2000px] mx-auto px-4 sm:px-8 w-full">
+            <div class="max-w-5xl">
+                <p class="text-[11px] sm:text-xs tracking-[0.4em] mb-6 text-gold-500/80 font-light reveal" data-i18n="hero_subtitle">MAESTRO / DIRECTOR</p>
+                <h1 class="text-[14vw] sm:text-[10vw] md:text-[8vw] lg:text-[6.5vw] font-light leading-[0.85] mb-4 font-cormorant tracking-tight" id="hero-title">
+                    <span class="block overflow-hidden"><span class="hero-title-line block" style="animation-delay: 0.2s">JOSÉ ANTONIO</span></span>
+                    <span class="block overflow-hidden"><span class="hero-title-line block" style="animation-delay: 0.5s">MOLINA</span></span>
                 </h1>
-                <a href="#CALENDARIO" class="group w-full sm:w-auto px-8 sm:px-12 py-4 border border-white hover:bg-white hover:text-black transition-all duration-500 text-xs tracking-[0.2em] animate-fade-in flex items-center justify-center sm:justify-start gap-4" style="animation-delay: 1.8s" data-i18n="hero_button">
-                    CALENDARIO
+                <p class="text-white/40 text-xs sm:text-sm tracking-[0.15em] mb-10 font-light" data-i18n="bio_roles">DIRECTOR DE ORQUESTA • ARREGLISTA • COMPOSITOR • PIANISTA</p>
+                <a href="#CALENDARIO" class="hero-cta inline-flex items-center gap-4 px-8 sm:px-12 py-4 text-[11px] tracking-[0.25em] font-light" data-i18n="hero_button">
+                    <span class="relative z-10">CALENDARIO</span>
+                    <svg class="w-4 h-4 relative z-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M19 9l-7 7-7-7"/></svg>
                 </a>
             </div>
         </div>
     </section>
 
-    <!-- Sobre Mí Section -->
-    <section id="sobre-mi" class="py-20 sm:py-40 px-4 sm:px-8 relative">
-        <div class="max-w-[2000px] mx-auto relative z-10">
+    <!-- Section Divider -->
+    <div class="section-divider py-8">
+        <span class="section-divider-icon">♪</span>
+    </div>
+
+    <!-- ═══════════════════════════════════════════
+         SOBRE MÍ / BIOGRAPHY
+         ═══════════════════════════════════════════ -->
+    <section id="sobre-mi" class="py-20 sm:py-32 lg:py-40 px-4 sm:px-8 relative">
+        <div class="max-w-[1400px] mx-auto relative z-10">
             <!-- Header -->
-            <div class="text-center mb-16">
-                <p class="text-sm tracking-[0.3em] text-white/60 mb-4" data-i18n="about_subtitle">SOBRE MÍ</p>
-                <h2 class="text-4xl sm:text-5xl font-light tracking-wide font-cormorant mb-8" data-i18n="about_titlerench">UN LEGADO MUSICAL</h2>
-                <div class="flex justify-center mb-12">
-                    <img id="img-profile" alt="José Antonio Molina" class="w-48 h-48 object-cover rounded-full">
+            <div class="text-center mb-20 reveal">
+                <p class="text-[11px] tracking-[0.4em] text-gold-500/60 mb-4 font-light" data-i18n="about_subtitle">SOBRE MÍ</p>
+                <h2 class="text-4xl sm:text-5xl lg:text-6xl font-light tracking-wide font-cormorant mb-10 gold-glow-text" data-i18n="about_titlerench">UN LEGADO MUSICAL</h2>
+                <div class="flex justify-center mb-10">
+                    <div class="profile-image-wrapper">
+                        <img id="img-profile" alt="José Antonio Molina" class="w-48 h-48 sm:w-56 sm:h-56 object-cover rounded-full" loading="lazy">
+                    </div>
                 </div>
-                <h3 class="text-2xl font-light tracking-wide font-cormorant mb-4" data-i18n="bio_name">José Antonio Molina</h3>
-                <p class="text-white/70 text-sm tracking-[0.2em]" data-i18n="bio_roles">DIRECTOR DE ORQUESTA • ARREGLISTA • COMPOSITOR • PIANISTA</p>
+                <h3 class="text-2xl sm:text-3xl font-light tracking-wide font-cormorant mb-3 text-white" data-i18n="bio_name">José Antonio Molina</h3>
+                <p class="text-white/50 text-[11px] tracking-[0.25em] font-light" data-i18n="bio_roles">DIRECTOR DE ORQUESTA • ARREGLISTA • COMPOSITOR • PIANISTA</p>
             </div>
 
             <!-- Biography Content -->
-            <div class="space-y-16">
+            <div class="space-y-20 lg:space-y-28">
                 <!-- Early Years -->
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-                    <div class="bg-white/5 p-8 rounded-lg">
-                        <h4 class="text-xl font-light mb-4 font-cormorant" data-i18n="bio_early_title">FORMACIÓN Y PRIMEROS AÑOS</h4>
-                        <p class="text-white/70 leading-relaxed" data-i18n="bio_early_text">
-                            Nació en Santo Domingo, República Dominicana. Estudió piano en el Conservatorio Nacional de Música con el profesor Vicente Grisolía. A la edad de 20 años se trasladó a Nueva York, donde realizó estudios de licenciatura y maestría en la Manhattan School of Music, al tiempo que estudiaba Composición y Dirección Orquestal en la escuela Juilliard.
-                        </p>
-                        <div class="flex justify-center mt-8">
-                            <img id="img-cnm-logo" data-i18n-alt="bio_early_img_alt" alt="Conservatorio Nacional de Música" class="h-24 object-contain">
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-12 items-center">
+                    <div class="lg:col-span-2 biography-card parallax-container p-8 sm:p-10 rounded-2xl reveal-left">
+                        <div class="parallax-bg"></div>
+                        <div class="relative z-10">
+                            <h4 class="text-xl sm:text-2xl font-light mb-6 font-cormorant text-glow ornamental-border pb-4 text-gold-500" data-i18n="bio_early_title">FORMACIÓN Y PRIMEROS AÑOS</h4>
+                            <p class="text-white/70 leading-relaxed text-base sm:text-lg" data-i18n="bio_early_text"></p>
                         </div>
                     </div>
-                    <div class="flex justify-center">
-                        <img id="img-cnm" data-i18n-alt="bio_early_img_alt" alt="Conservatorio Nacional de Música" class="w-full max-w-md rounded-lg shadow-lg">
+                    <div class="image-spotlight p-4 rounded-2xl reveal-right">
+                        <div class="floating-image img-hover-zoom img-warm-overlay rounded-xl overflow-hidden">
+                            <img id="img-cnm" alt="Conservatorio Nacional de Música" class="w-full h-64 sm:h-80 object-cover" loading="lazy" data-i18n-alt="bio_early_img_alt">
+                        </div>
                     </div>
                 </div>
 
                 <!-- International Career -->
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-                    <div class="flex justify-center order-2 md:order-1">
-                        <img id="img-director" alt="Director en acción" class="w-full max-w-md rounded-lg shadow-lg">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+                    <div class="order-2 lg:order-1 relative reveal-left">
+                        <div class="diagonal-split rounded-2xl overflow-hidden">
+                            <div class="img-hover-zoom img-warm-overlay">
+                                <img id="img-director" alt="Director en acción" class="w-full h-80 sm:h-96 object-cover" loading="lazy">
+                            </div>
+                        </div>
+                        <div class="absolute -bottom-4 -right-4 sm:-bottom-6 sm:-right-6 w-20 h-20 sm:w-24 sm:h-24 bg-gradient-to-br from-gold-600 to-gold-800 rounded-full flex items-center justify-center gold-glow">
+                            <span class="text-xs font-semibold tracking-wider">1990</span>
+                        </div>
                     </div>
-                    <div class="bg-white/5 p-8 rounded-lg order-1 md:order-2">
-                        <h4 class="text-xl font-light mb-4 font-cormorant" data-i18n="bio_international_title">CARRERA INTERNACIONAL</h4>
-                        <p class="text-white/70 leading-relaxed" data-i18n="bio_international_text">
-                            Debutó como director orquestal al frente de la Orquesta Sinfónica de Maracaibo, Venezuela. En 1990, fue uno de los tres finalistas de la Competencia Exxon para conductores orquestales, seleccionado entre más de cien directores de todo el mundo. Es el primer dominicano en recibir el nombramiento de Director Titular de una orquesta en los Estados Unidos, The Greater Palm Beach Symphony.
-                        </p>
+                    <div class="order-1 lg:order-2 biography-card p-8 sm:p-10 rounded-2xl reveal-right">
+                        <h4 class="text-xl sm:text-2xl font-light mb-6 font-cormorant text-glow text-gold-500" data-i18n="bio_international_title">CARRERA INTERNACIONAL</h4>
+                        <p class="text-white/70 leading-relaxed text-base sm:text-lg" data-i18n="bio_international_text"></p>
                     </div>
                 </div>
 
                 <!-- Notable Collaborations -->
-                <div class="bg-white/5 p-8 rounded-lg">
-                    <h4 class="text-xl font-light mb-4 font-cormorant" data-i18n="bio_collab_title">COLABORACIONES DESTACADAS</h4>
-                    <p class="text-white/70 leading-relaxed" data-i18n="bio_collab_text">
-                        Debutó en el Kravis Center de Palm Beach, dirigiendo a la mezzosoprano Marilyn Horne, junto a la Orquesta de la Ópera de Palm Beach. En 1995 dirigió a la superestrella latina Gloria Estefan en el Vaticano, con motivo del 50 aniversario de la ordenación como sacerdote del Papa Juan Pablo II. Desde 1996, El maestro Molina ha sido director y principal arreglista de los conciertos Pavarotti & Friends.
-                    </p>
+                <div class="relative reveal">
+                    <div class="absolute inset-0 bg-gradient-to-r from-transparent via-gold-900/10 to-transparent rounded-2xl"></div>
+                    <div class="relative biography-card p-8 sm:p-12 rounded-2xl text-center">
+                        <h4 class="text-2xl sm:text-3xl font-light mb-8 font-cormorant text-glow text-gold-500" data-i18n="bio_collab_title">COLABORACIONES DESTACADAS</h4>
+                        <p class="text-white/70 leading-relaxed text-base sm:text-lg max-w-4xl mx-auto" data-i18n="bio_collab_text"></p>
+                    </div>
                 </div>
 
                 <!-- Works and Productions -->
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-                    <div class="bg-white/5 p-8 rounded-lg">
-                        <h4 class="text-xl font-light mb-4 font-cormorant" data-i18n="bio_works_title">OBRAS Y PRODUCCIONES</h4>
-                        <p class="text-white/70 leading-relaxed" data-i18n="bio_works_text">
-                            Su Obertura 'Yaya' fue dirigida por el maestro Leonard Slatkin y la National Symphony Orchestra dentro del marco del primer Festival Latino-Caribeño en el Kennedy Center en Washington, D.C. En 2002, el maestro Molina dirigió al tenor español José Carreras en un concierto de gala en la República Dominicana. En 2006 fue invitado como Director Musical y Principal Arreglista para la inauguración del "Carnival Performing Arts Center" de Miami, Florida.
-                        </p>
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
+                    <div class="biography-card p-8 sm:p-10 rounded-2xl reveal-left">
+                        <h4 class="text-xl sm:text-2xl font-light mb-6 font-cormorant text-glow text-gold-500" data-i18n="bio_works_title">OBRAS Y PRODUCCIONES</h4>
+                        <p class="text-white/70 leading-relaxed" data-i18n="bio_works_text"></p>
                     </div>
-                    <div class="flex justify-center">
-                        <img id="img-kennedy" data-i18n-alt="bio_works_img_alt" alt="Concierto en el Kennedy Center" class="w-full max-w-md rounded-lg shadow-lg">
+                    <div class="reveal-right">
+                        <div class="image-mask p-4 rounded-2xl">
+                            <div class="img-hover-zoom img-warm-overlay">
+                                <img id="img-kennedy" alt="Kennedy Center" class="w-full h-64 sm:h-72 object-cover rounded-xl" loading="lazy" data-i18n-alt="bio_works_img_alt">
+                            </div>
+                        </div>
                     </div>
                 </div>
 
                 <!-- Recording Industry -->
-                <div class="bg-white/5 p-8 rounded-lg">
-                    <h4 class="text-xl font-light mb-4 font-cormorant" data-i18n="bio_recording_title">INDUSTRIA DE LA GRABACIÓN</h4>
-                    <p class="text-white/70 leading-relaxed" data-i18n="bio_recording_text">
-                        Se ha dedicado intensamente a la industria de la grabación. "Caribbean Gems" (Joyas Musicales Dominicanas), es el título del álbum producido, arreglado y dirigido por el Maestro Molina por encargo de la Secretaría de Turismo, con la participación de Arturo Sandoval, Gonzalo Rubalcaba y Ed Calle como invitados especiales. "Caribbean Treasures" es otro proyecto discográfico dirigido y producido por el maestro Molina junto a la Orquesta Sinfónica de Londres con Paquito D´Rivera como invitado especial. Esta producción, compuesta por obras de autores clásicos dominicanos, incluye «Fantasía Merengue» de la autoría del maestro Molina.
-                    </p>
-                </div>
-
-                <!-- Awards and Recognition -->
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-                    <div class="flex justify-center order-2 md:order-1">
-                        <img id="img-awards" data-i18n-alt="bio_awards_img_alt" alt="Premios y reconocimientos" class="w-full max-w-md rounded-lg shadow-lg">
-                    </div>
-                    <div class="bg-white/5 p-8 rounded-lg order-1 md:order-2">
-                        <h4 class="text-xl font-light mb-4 font-cormorant" data-i18n="bio_awards_title">RECONOCIMIENTOS Y PREMIOS</h4>
-                        <p class="text-white/70 leading-relaxed" data-i18n="bio_awards_text">
-                            Ganador del premio "El Gran Soberano" en 1997, el más alto reconocimiento a la labor de un artista en la República Dominicana. Fue nombrado Profesor Emérito por la Universidad Autónoma de Santo Domingo. En 1996 el Gobierno Dominicano le otorga la investidura de Embajador Cultural de la República Dominicana. Fue condecorado con la Orden de Duarte, Sánchez y Mella en el grado de Gran Cruz de Plata en 2001. En junio del 2008, la Universidad Nacional Pedro Henríquez Ureña (UNPHU) le otorgó un Doctorado Honoris Causa, junto a Michael Camilo y Juan Luis Guerra.
-                        </p>
+                <div class="biography-card p-8 sm:p-12 rounded-2xl relative overflow-hidden reveal">
+                    <div class="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-gold-600/10 to-transparent rounded-full -mr-16 -mt-16"></div>
+                    <div class="absolute bottom-0 left-0 w-24 h-24 bg-gradient-to-tr from-gold-700/10 to-transparent rounded-full -ml-12 -mb-12"></div>
+                    <div class="relative z-10">
+                        <h4 class="text-xl sm:text-2xl font-light mb-6 font-cormorant text-glow text-gold-500 flex items-center gap-3" data-i18n="bio_recording_title">
+                            <span class="text-gold-500/50">♫</span>
+                            INDUSTRIA DE LA GRABACIÓN
+                        </h4>
+                        <p class="text-white/70 leading-relaxed text-base sm:text-lg max-w-3xl" data-i18n="bio_recording_text"></p>
                     </div>
                 </div>
 
-                <!-- OSN Leadership -->
-                <div class="bg-white/5 p-8 rounded-lg">
-                    <h4 class="text-xl font-light mb-4 font-cormorant" data-i18n="bio_osn_title">DIRECCIÓN DE LA OSN</h4>
-                    <p class="text-white/70 leading-relaxed" data-i18n="bio_osn_text">
-                        En marzo del 2009, mediante Decreto Presidencial 245-09, quedó designado como Director Titular de la Orquesta Sinfónica Nacional (OSN). El 22 de febrero de 2011, en conmemoración del 167 Aniversario de la Independencia de nuestra nación, la Embajada de la República Dominicana en los Emiratos Árabes Unidos, en colaboración con "Abu Dhabi Music and Foundation (ADMAF), se presentó en la ciudad de Damasco, Siria, el concierto "Caribbean Gems" bajo la dirección del Director de la Orquesta Sinfónica Nacional de la República Dominicana, José Antonio Molina.
-                    </p>
-                    <div class="flex justify-center mt-8">
-                        <img id="img-osn-logo" data-i18n-alt="bio_osn_img_alt" alt="Orquesta Sinfónica Nacional" class="h-24 object-contain">
-                    </div>
-                </div>
-
-                <!-- Recent Achievements -->
-                <div class="text-center">
-                    <h4 class="text-2xl font-light mb-8 font-cormorant" data-i18n="logros_title">LOGROS RECIENTES</h4>
-                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                        <div class="bg-white/5 p-6 rounded-lg">
-                            <p class="text-white/70 leading-relaxed" data-i18n="logros_2021">
-                                En 2021 recibió el galardón "Reconocimiento a las Artes Escénicas 2019" en representación de la OSN y el galardón "Producción Escénica 2019" por la dirección Artística y Musical de la Opera La Traviata.
-                            </p>
+                <!-- Awards -->
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-12 items-center">
+                    <div class="order-2 lg:order-1 flex justify-center reveal-left">
+                        <div class="relative">
+                            <div class="absolute inset-0 bg-gradient-to-r from-gold-600/15 via-gold-400/15 to-gold-600/15 rounded-2xl blur-2xl"></div>
+                            <div class="img-hover-zoom img-warm-overlay rounded-2xl overflow-hidden">
+                                <img id="img-awards" alt="Premios" class="relative w-56 sm:w-64 h-72 sm:h-80 object-cover" loading="lazy" data-i18n-alt="bio_awards_img_alt">
+                            </div>
                         </div>
-                        <div class="bg-white/5 p-6 rounded-lg">
-                            <p class="text-white/70 leading-relaxed" data-i18n="logros_2023">
-                                En 2023 recibió en representación de la OSN, el galardón "Producción Escénica 2022" por la obra "Messa Da Requiem" de Giuseppe Verdi.
-                            </p>
-                        </div>
-                        <div class="bg-white/5 p-6 rounded-lg">
-                            <p class="text-white/70 leading-relaxed" data-i18n="logros_2024">
-                                En julio de 2024 fue reconocido por el Senado de la República Dominicana, por sus invaluables aportes al arte y a la cultura.
-                            </p>
+                    </div>
+                    <div class="lg:col-span-2 order-1 lg:order-2 biography-card p-8 sm:p-10 rounded-2xl reveal-right">
+                        <h4 class="text-xl sm:text-2xl font-light mb-6 font-cormorant text-glow text-gold-500" data-i18n="bio_awards_title">RECONOCIMIENTOS Y PREMIOS</h4>
+                        <p class="text-white/70 leading-relaxed" data-i18n="bio_awards_text"></p>
+                    </div>
+                </div>
+
+                <!-- Recent Achievements / Timeline -->
+                <div class="biography-card p-8 sm:p-12 rounded-2xl reveal">
+                    <h4 class="text-2xl sm:text-3xl font-light mb-12 font-cormorant text-glow text-center text-gold-500" data-i18n="logros_title">LOGROS RECIENTES</h4>
+                    <div class="relative timeline-line">
+                        <div class="space-y-12 sm:space-y-16 stagger-children">
+                            <!-- 2021 -->
+                            <div class="flex items-start reveal">
+                                <div class="hidden sm:block w-1/2 pr-6 text-right">
+                                    <div class="timeline-card">
+                                        <h5 class="text-gold-500 font-cormorant text-xl mb-2">2021</h5>
+                                        <p class="text-white/70 text-sm leading-relaxed" data-i18n="logros_2021"></p>
+                                    </div>
+                                </div>
+                                <div class="timeline-dot mx-4 mt-2"></div>
+                                <div class="sm:w-1/2 sm:pl-6">
+                                    <div class="sm:hidden timeline-card">
+                                        <h5 class="text-gold-500 font-cormorant text-xl mb-2">2021</h5>
+                                        <p class="text-white/70 text-sm leading-relaxed" data-i18n="logros_2021"></p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- 2023 -->
+                            <div class="flex items-start reveal">
+                                <div class="hidden sm:block w-1/2 pr-6"></div>
+                                <div class="timeline-dot mx-4 mt-2"></div>
+                                <div class="sm:w-1/2 sm:pl-6">
+                                    <div class="timeline-card">
+                                        <h5 class="text-gold-500 font-cormorant text-xl mb-2">2023</h5>
+                                        <p class="text-white/70 text-sm leading-relaxed" data-i18n="logros_2023"></p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- 2024 -->
+                            <div class="flex items-start reveal">
+                                <div class="hidden sm:block w-1/2 pr-6 text-right">
+                                    <div class="timeline-card">
+                                        <h5 class="text-gold-500 font-cormorant text-xl mb-2">2024</h5>
+                                        <p class="text-white/70 text-sm leading-relaxed" data-i18n="logros_2024"></p>
+                                    </div>
+                                </div>
+                                <div class="timeline-dot mx-4 mt-2"></div>
+                                <div class="sm:w-1/2 sm:pl-6">
+                                    <div class="sm:hidden timeline-card">
+                                        <h5 class="text-gold-500 font-cormorant text-xl mb-2">2024</h5>
+                                        <p class="text-white/70 text-sm leading-relaxed" data-i18n="logros_2024"></p>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
 
                 <!-- Latest Performance -->
-                <div class="bg-white/5 p-8 rounded-lg text-center">
-                    <h4 class="text-2xl font-light mb-4 font-cormorant" data-i18n="ultima_title">ÚLTIMA PRESENTACIÓN</h4>
-                    <p class="text-white/70 leading-relaxed" data-i18n="ultima_text">
-                        Recientemente, el pasado 6 de febrero de 2025 el maestro José Antonio Molina dirigió en la Sala Carlos Piantini del Teatro Nacional Eduardo Brito a la diva del bel canto, la soprano Anna Netrebko y al tenor Martin Muehle, en un concierto con la Orquesta Sinfónica Nacional.
-                    </p>
+                <div class="relative text-center reveal-scale">
+                    <div class="biography-card p-8 sm:p-12 rounded-2xl">
+                        <div class="inline-flex items-center justify-center w-14 h-14 rounded-full mb-6" style="background: linear-gradient(135deg, rgba(201,169,97,0.2), rgba(184,134,11,0.3));">
+                            <span class="text-gold-500 text-2xl">✦</span>
+                        </div>
+                        <h4 class="text-2xl sm:text-3xl font-light mb-6 font-cormorant text-glow text-gold-500" data-i18n="ultima_title">ÚLTIMA PRESENTACIÓN</h4>
+                        <p class="text-lg sm:text-xl text-white/80 leading-relaxed max-w-3xl mx-auto font-light" data-i18n="ultima_text"></p>
+                        <div class="mt-8 flex justify-center gap-2">
+                            <div class="w-1.5 h-1.5 bg-gold-500/60 rounded-full"></div>
+                            <div class="w-1.5 h-1.5 bg-gold-500/40 rounded-full"></div>
+                            <div class="w-1.5 h-1.5 bg-gold-500/20 rounded-full"></div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Scrolling Text -->
-    <div class="overflow-hidden py-4 sm:py-8 bg-white text-black border-y border-black/20">
-        <div class="whitespace-nowrap marquee inline-block text-[80px] sm:text-[120px] md:text-[180px] font-light leading-none opacity-90" data-i18n="marquee">
-            MAESTRÍA ARMONIOSA      MAESTRÍA ARMONIOSA    
+    <!-- Scrolling Marquee -->
+    <div class="overflow-hidden py-6 sm:py-8 border-y border-gold-500/10" style="background: linear-gradient(to right, rgba(201,169,97,0.02), rgba(201,169,97,0.05), rgba(201,169,97,0.02));">
+        <div class="whitespace-nowrap marquee inline-block text-[60px] sm:text-[100px] md:text-[150px] lg:text-[180px] font-light leading-none text-white/[0.04] font-cormorant tracking-wider" data-i18n="marquee">
+            MAESTRÍA ARMONIOSA &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; MAESTRÍA ARMONIOSA &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         </div>
     </div>
 
-    <!-- Featured Performances -->
-    <section id="CALENDARIO" class="py-20 sm:py-40 px-4 sm:px-8">
-        <div class="max-w-[2000px] mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 sm:gap-20">
-            <div class="space-y-8 sm:space-y-12 self-center">
+    <!-- ═══════════════════════════════════════════
+         CALENDARIO / FEATURED PERFORMANCES
+         ═══════════════════════════════════════════ -->
+    <section id="CALENDARIO" class="py-20 sm:py-32 lg:py-40 px-4 sm:px-8">
+        <div class="max-w-[1400px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20">
+            <div class="space-y-8 self-center reveal-left">
                 <div class="space-y-4">
-                    <p class="text-sm tracking-[0.2em] text-white/60" data-i18n="performance_subtitle">ACTUACIÓN DESTACADA</p>
-                    <h2 class="text-4xl sm:text-5xl font-light tracking-wide font-cormorant" data-i18n="performance_title">MOLINA & VEITÍA:<br/>MÚSICA EN MOVIMIENTO</h2>
+                    <p class="text-[11px] tracking-[0.3em] text-gold-500/60 font-light" data-i18n="performance_subtitle">ACTUACIÓN DESTACADA</p>
+                    <h2 class="text-3xl sm:text-4xl lg:text-5xl font-light tracking-wide font-cormorant leading-tight gold-glow-text" data-i18n="performance_title">MOLINA & VEITÍA:<br/>MÚSICA EN MOVIMIENTO</h2>
                 </div>
-                <p class="text-white/70 leading-relaxed text-base sm:text-lg" data-i18n="performance_p">
-                    Únete a nosotros el 31 de mayo de 2025 en el Teatro Nacional Eduardo Brito para un espectáculo vibrante que celebra la dominicanidad. Dirigido por el Maestro José Antonio Molina, este evento combina música sinfónica, danza y tecnología, rindiendo homenaje a la cultura dominicana. Recientemente, el Maestro dirigió un concierto histórico con Anna Netrebko el 6 de febrero de 2025, marcando su debut en la República Dominicana.
-                </p>
-                <a href="https://sinfonia.org.do/agenda/musica-en-movimiento/" target="_blank" class="group w-full sm:w-auto text-sm tracking-[0.2em] hover:text-white/50 transition-colors flex items-center justify-center sm:justify-start gap-6" data-i18n="performance_button">
-                    VER PROGRAMACIÓN
+                <p class="text-white/60 leading-relaxed text-base sm:text-lg font-light" data-i18n="performance_p"></p>
+                <a href="https://sinfonia.org.do/agenda/musica-en-movimiento/" target="_blank" class="group inline-flex items-center gap-3 text-[11px] tracking-[0.25em] text-gold-500/70 hover:text-gold-500 transition-colors duration-300 font-light" data-i18n="performance_button">
+                    <span>VER PROGRAMACIÓN</span>
+                    <svg class="w-4 h-4 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
                 </a>
             </div>
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                <img id="img-performance1" alt="Actuación de la orquesta" class="w-full aspect-[3/4] object-cover hover:scale-[1.02] transition-transform duration-700">
-                <img id="img-performance2" alt="Director en acción" class="w-full aspect-[3/4] object-cover sm:mt-20 hover:scale-[1.02] transition-transform duration-700">
-            </div>
-        </div>
-    </section>
-
-    <!-- Inspiración Section -->
-    <section id="inspiracion" class="py-20 sm:py-32 px-4 sm:px-8 bg-black border-y border-white/10">
-        <div class="max-w-[1200px] mx-auto flex flex-col md:flex-row items-center gap-12">
-            <div class="flex-shrink-0 w-full md:w-1/3 flex justify-center">
-                <img id="img-papa-molina" alt="Papá Molina" class="w-64 h-64 object-cover rounded-full shadow-lg border-4 border-white/20">
-            </div>
-            <div class="w-full md:w-2/3">
-                <h2 class="text-4xl sm:text-5xl font-light tracking-wide font-cormorant mb-6 text-white" data-i18n="inspiracion_title">Inspiración</h2>
-                <p class="text-white/80 text-lg mb-6" data-i18n="inspiracion_summary">
-                    Maestro Molina recuerda a su padre, Ramón Antonio "Papá" Molina Pacheco, como su mayor inspiración y crítico más honesto. Más allá de su legado musical y su humildad, lo que más extraña es su sonrisa y la pureza de su alma. La pasión por la música y los valores transmitidos por su padre siguen guiando su vida y arte, manteniéndolos unidos más allá del tiempo.
-                </p>
-                <div class="space-y-6">
-                    <blockquote class="border-l-4 border-white/30 pl-4 italic text-white/90" data-i18n="inspiracion_quote1">
-                        "Tuve la gran bendición de tener un padre único e irrepetible, el más tierno, noble, dulce y amoroso de todos".
-                    </blockquote>
-                    <blockquote class="border-l-4 border-white/30 pl-4 italic text-white/90" data-i18n="inspiracion_quote2">
-                        "La música ha sido y será siempre la razón y la esencia de nuestra existencia, refiriéndome a una filosofía de vida compartida por mi viejo y yo. Desde el vientre de mi madre, y aún tras su partida terrenal, a mi padre y a mí nos mantendrá visceralmente unidos hasta la eternidad el misterioso mundo de la música".
-                    </blockquote>
+            <div class="grid grid-cols-2 gap-4 sm:gap-6 reveal-right">
+                <div class="img-hover-zoom img-warm-overlay rounded-xl overflow-hidden">
+                    <img id="img-performance1" alt="Actuación de la orquesta" class="w-full aspect-[3/4] object-cover" loading="lazy">
+                </div>
+                <div class="img-hover-zoom img-warm-overlay rounded-xl overflow-hidden mt-12 sm:mt-20">
+                    <img id="img-performance2" alt="Director en acción" class="w-full aspect-[3/4] object-cover" loading="lazy">
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Video Section -->
-    <section id="VIDEOS" class="py-20 sm:py-40 px-4 sm:px-8">
+    <!-- Section Divider -->
+    <div class="section-divider py-6">
+        <span class="section-divider-icon">♫</span>
+    </div>
+
+    <!-- ═══════════════════════════════════════════
+         INSPIRACIÓN (Father Tribute)
+         ═══════════════════════════════════════════ -->
+    <section id="inspiracion" class="py-20 sm:py-32 lg:py-40 px-4 sm:px-8 relative overflow-hidden">
+        <!-- Ambient background -->
+        <div class="absolute inset-0 bg-gradient-to-b from-black via-burgundy-900/10 to-black"></div>
+        <div class="absolute inset-0 bg-gradient-to-r from-transparent via-gold-900/5 to-transparent"></div>
+        
+        <div class="max-w-[1100px] mx-auto relative z-10">
+            <div class="flex flex-col md:flex-row items-center gap-10 md:gap-16">
+                <div class="flex-shrink-0 reveal-left">
+                    <div class="profile-image-wrapper">
+                        <img id="img-papa-molina" alt="Papá Molina" class="w-48 h-48 sm:w-56 sm:h-56 object-cover rounded-full" loading="lazy">
+                    </div>
+                </div>
+                <div class="reveal-right">
+                    <p class="text-[11px] tracking-[0.4em] text-gold-500/50 mb-3 font-light">IN MEMORIAM</p>
+                    <h2 class="text-3xl sm:text-4xl lg:text-5xl font-light tracking-wide font-cormorant mb-6 text-white gold-glow-text" data-i18n="inspiracion_title">Inspiración</h2>
+                    <p class="text-white/60 text-base sm:text-lg mb-8 leading-relaxed font-light" data-i18n="inspiracion_summary"></p>
+                    <div class="space-y-8">
+                        <blockquote class="inspiracion-quote text-base sm:text-lg" data-i18n="inspiracion_quote1">
+                            "Tuve la gran bendición de tener un padre único e irrepetible, el más tierno, noble, dulce y amoroso de todos".
+                        </blockquote>
+                        <blockquote class="inspiracion-quote text-base sm:text-lg" data-i18n="inspiracion_quote2">
+                            "La música ha sido y será siempre la razón y la esencia de nuestra existencia..."
+                        </blockquote>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Divider -->
+    <div class="section-divider py-6">
+        <span class="section-divider-icon">♩</span>
+    </div>
+
+    <!-- ═══════════════════════════════════════════
+         VIDEOS
+         ═══════════════════════════════════════════ -->
+    <section id="VIDEOS" class="py-20 sm:py-32 lg:py-40 px-4 sm:px-8">
         <div class="max-w-[1200px] mx-auto">
-            <div class="text-center mb-16">
-                <p class="text-sm tracking-[0.2em] text-white/60" data-i18n="video_subtitle">VIDEOS DESTACADOS</p>
-                <h2 class="text-4xl sm:text-5xl font-light tracking-wide font-cormorant mb-8" data-i18n="video_title">PRESENTACIONES MEMORABLES</h2>
+            <div class="text-center mb-16 reveal">
+                <p class="text-[11px] tracking-[0.3em] text-gold-500/60 mb-4 font-light" data-i18n="video_subtitle">VIDEOS DESTACADOS</p>
+                <h2 class="text-3xl sm:text-4xl lg:text-5xl font-light tracking-wide font-cormorant gold-glow-text" data-i18n="video_title">PRESENTACIONES MEMORABLES</h2>
             </div>
-            <div class="flex flex-col items-center">
-                <!-- Main Video Player -->
+            <div class="flex flex-col items-center reveal">
+                <!-- Main Video -->
                 <div class="w-full max-w-3xl mb-8">
-                    <video id="main-video" controls class="w-full aspect-[16/9] object-cover rounded-lg shadow-lg">
-                        <source src="" type="video/mp4">
-                        Tu navegador no soporta el elemento de video.
-                    </video>
-                    <p id="main-video-title" class="text-white/70 text-lg mt-4 text-center font-cormorant"></p>
+                    <div class="rounded-xl overflow-hidden gold-border-glow">
+                        <video id="main-video" controls class="w-full aspect-[16/9] object-cover bg-black">
+                            <source src="" type="video/mp4">
+                        </video>
+                    </div>
+                    <p id="main-video-title" class="text-white/50 text-base sm:text-lg mt-4 text-center font-cormorant font-light"></p>
                 </div>
-                <!-- Thumbnails Row -->
+                <!-- Thumbnails -->
                 <div class="flex flex-row flex-wrap justify-center gap-4 w-full">
-                    <div class="video-thumb flex flex-col items-center cursor-pointer" data-video="video-1">
-                        <video id="thumb-video-1" class="w-40 h-24 object-cover rounded border-2 border-transparent hover:border-white transition" muted>
+                    <div class="video-thumb video-thumb-wrapper flex flex-col items-center cursor-pointer" data-video="video-1">
+                        <video id="thumb-video-1" class="w-36 sm:w-40 h-20 sm:h-24 object-cover rounded-lg border border-white/10 hover:border-gold-500/50 transition-all duration-300" muted>
                             <source src="" type="video/mp4">
                         </video>
-                        <p class="text-white/70 text-xs mt-2 text-center" data-i18n="video1_title">Conversatorio: La música como herramienta socio cultural</p>
+                        <p class="text-white/40 text-[10px] sm:text-xs mt-2 text-center max-w-[160px] font-light" data-i18n="video1_title">Conversatorio</p>
                     </div>
-                    <div class="video-thumb flex flex-col items-center cursor-pointer" data-video="video-2">
-                        <video id="thumb-video-2" class="w-40 h-24 object-cover rounded border-2 border-transparent hover:border-white transition" muted>
+                    <div class="video-thumb video-thumb-wrapper flex flex-col items-center cursor-pointer" data-video="video-2">
+                        <video id="thumb-video-2" class="w-36 sm:w-40 h-20 sm:h-24 object-cover rounded-lg border border-white/10 hover:border-gold-500/50 transition-all duration-300" muted>
                             <source src="" type="video/mp4">
                         </video>
-                        <p class="text-white/70 text-xs mt-2 text-center" data-i18n="video2_title">Sinfonía No. 4 Tchaikovsky</p>
+                        <p class="text-white/40 text-[10px] sm:text-xs mt-2 text-center max-w-[160px] font-light" data-i18n="video2_title">Sinfonía No. 4 Tchaikovsky</p>
                     </div>
-                    <div class="video-thumb flex flex-col items-center cursor-pointer" data-video="video-3">
-                        <video id="thumb-video-3" class="w-40 h-24 object-cover rounded border-2 border-transparent hover:border-white transition" muted>
+                    <div class="video-thumb video-thumb-wrapper flex flex-col items-center cursor-pointer" data-video="video-3">
+                        <video id="thumb-video-3" class="w-36 sm:w-40 h-20 sm:h-24 object-cover rounded-lg border border-white/10 hover:border-gold-500/50 transition-all duration-300" muted>
                             <source src="" type="video/mp4">
                         </video>
-                        <p class="text-white/70 text-xs mt-2 text-center" data-i18n="video3_title">Centro Cultura Digital Indotel</p>
+                        <p class="text-white/40 text-[10px] sm:text-xs mt-2 text-center max-w-[160px] font-light" data-i18n="video3_title">Centro Cultura Digital</p>
                     </div>
-                    <div class="video-thumb flex flex-col items-center cursor-pointer" data-video="video-4">
-                        <video id="thumb-video-4" class="w-40 h-24 object-cover rounded border-2 border-transparent hover:border-white transition" muted>
+                    <div class="video-thumb video-thumb-wrapper flex flex-col items-center cursor-pointer" data-video="video-4">
+                        <video id="thumb-video-4" class="w-36 sm:w-40 h-20 sm:h-24 object-cover rounded-lg border border-white/10 hover:border-gold-500/50 transition-all duration-300" muted>
                             <source src="" type="video/mp4">
                         </video>
-                        <p class="text-white/70 text-xs mt-2 text-center" data-i18n="video4_title">Schumann Sinfonía No. 4</p>
+                        <p class="text-white/40 text-[10px] sm:text-xs mt-2 text-center max-w-[160px] font-light" data-i18n="video4_title">Schumann Sinfonía No. 4</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Footer Section -->
-    <footer class="py-8 text-center text-sm text-white/60">
-        <p data-i18n="footer">© 2025 José Antonio Molina. Todos los derechos reservados.</p>
+    <!-- ═══════════════════════════════════════════
+         FOOTER
+         ═══════════════════════════════════════════ -->
+    <footer id="contacto" class="footer-gradient py-16 sm:py-20 px-4 sm:px-8">
+        <div class="max-w-[1200px] mx-auto text-center">
+            <p class="font-cormorant text-2xl sm:text-3xl font-light tracking-wider text-white/30 mb-6">JOSÉ ANTONIO MOLINA</p>
+            <div class="section-divider mb-6">
+                <span class="section-divider-icon">♪</span>
+            </div>
+            <p class="text-white/30 text-xs tracking-[0.15em] font-light" data-i18n="footer">© 2025 José Antonio Molina. Todos los derechos reservados.</p>
+        </div>
     </footer>
 
 </body>

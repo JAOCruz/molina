@@ -106,7 +106,7 @@ export const translations = {
         video4_title: "Schumann Symphony No. 4",
         inspiracion_title: "Inspiration",
         inspiracion_summary: "Maestro Molina remembers his father, Ramón Antonio 'Papá' Molina Pacheco, as his greatest inspiration and most honest critic. Beyond his musical legacy and humility, what he misses most is his smile and the purity of his soul. The passion for music and the values passed down by his father continue to guide his life and art, keeping them united beyond time.",
-        inspiracion_quote1: "Tuve la gran bendición de tener un padre único e irrepetible, el más tierno, noble, dulce y amoroso de todos.",
-        inspiracion_quote2: "La música ha sido y será siempre la razón y la esencia de nuestra existencia, refiriéndome a una filosofía de vida compartida por mi viejo y yo. Desde el vientre de mi madre, y aún tras su partida terrenal, a mi padre y a mí nos mantendrá visceralmente unidos hasta la eternidad el misterioso mundo de la música."
+        inspiracion_quote1: "\"I had the great blessing of having a father who was one of a kind — the most tender, noble, gentle, and loving of all.\"",
+        inspiracion_quote2: "\"Music has been and will always be the reason and essence of our existence — a philosophy of life shared by my old man and me. From my mother's womb, and even after his earthly departure, the mysterious world of music will keep my father and me viscerally united for eternity.\""
     }
 };
